@@ -1,0 +1,91 @@
+==============Comandos Basicos============
+==> Para ingresar a base de datos Postgres desde consola 
+
+1. Instalar sudo apt-get install postgres-xc-client
+U=Usuario
+h=Host
+d=nombre de la bd
+2. psql -U postgres -W -h localhost -d prime_prueba
+
+¡Enhorabuena! Coloca el comando sql de quieras.
+
+Cerrar conexión 	\q
+Cambiar de Base de datos 	\c __base_datos__
+Listar Bases de datos 	\l
+Ver Definiciones 	\d __table__
+Listar Schemas 	\dn
+Listar funciones 	\df
+Listar Vistas 	\dv
+Ver código SLQ de la función 	\df+ __function
+Pretty-format 	\
+Para salir de un listado q
+
+Nota: Cualquier duda "help"
+http://apuntes-snicoper.readthedocs.io/es/latest/programacion/postgresql/comandos_consola_psql.html
+
+== > Para restaurar BD dado un respaldo en formato sql
+
+psql --host localhost  -U postgres --port 5432 --file /ruta/nombre_bd.sql nombre_bd_en_postgress
+
+== > Ver procesos en el puerto 8080
+
+netstat -npl | grep 8080
+
+== > Matar procesos
+
+kill -9 numero del proceso
+
+== > Para Modificar las credenciales de la BD (a modificar)
+
+ir a src > main > resorces > META-INF > persistence.xml
+
+y modificar  el value de <property name="hibernate.connection.password" value="por_su_clave_postgress" />
+
+==> Ignorar cambios locales en git <==
+para el ejemplo usamos el archivo de persistencia
+
+git update-index --assume-unchanged 'prime/src/main/resources/META-INF/persistence.xml'
+
+Si se quiere dejar de ignorar:
+
+git update-index --no-asume-unchaged 'prime/src/main/resources/META-INF/persistence.xml'
+
+
+--Estandares de Templates--
+
+Formularios: frm-nombre
+Listas: list-nombre
+Catalogo: cat-nombre
+
+--Estandares de paquetes y carpetas en templates--
+
+Gestión de Promoción y oferta: gpo
+Gestión de Agendas y Citas: gac
+Gestión de Servicio: gs
+Gestión de Post-Servicio: gps
+Gestión de Difusión y Escucha al Cliente: gdec
+Gestión de Información Estadistica: gie
+Gestión de Configuración: gc
+Gestión de Seguridad Funcional: gsf
+
+Perfil Cliente: pc
+
+Ejemplo en paquete:
+ucla.si.controlador.gc
+ucla.si.dao.gc
+ucla.si.modelo.app
+
+Ejemplo en template: /gc/frm-servicios.zul
+
+Estandar de Commit:
+
+[Actividad] Descripción.
+Ejemplo: [Modelo/Servicios] Nuevo modelo .....
+
+
+Java para agregar el estatus usar "Activo" con la A en mayuscula para eliminarlo colocar "Inactivo" I en mayuscula
+
+Estados de las citas Pendiente,Aprobada,Asignada,Cancelada,Recibida,Culminada
+
+
+

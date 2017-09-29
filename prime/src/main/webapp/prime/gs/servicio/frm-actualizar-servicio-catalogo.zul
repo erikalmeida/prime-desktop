@@ -1,0 +1,84 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gs.servicio.ControladorActualizarServicioCatalogo">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Configurar Servicios</a>
+	</div>
+	<space/>
+	<div align="center" >
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Configurar Servicios" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<textbox id="txtBuscar" placeholder="Introduzca su búsqueda" width="60%"  maxlength="50"/>
+							<combobutton label="Acciones">
+								<menupopup >
+									<menuitem iconSclass="z-icon-search" id="mItemBuscar" label="Buscar" sclass="mItem"  />
+									                    	                    						                  
+									
+								</menupopup>
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+	   		<space />	
+		</groupbox>
+	</div>
+	<space/>
+	<div align="center">
+		<div align="center" style="max-width: 950px;" >
+			<listbox id="listServicios" checkmark="true" nonselectableTags="*" 
+					oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					
+					<listheader align="left" label="Titulo" width="20%"></listheader>
+					<listheader align="left" label="Descripción" width="56%"></listheader>
+					<listheader align="left" label="Precio" width="10%" ></listheader>
+					<listheader align="left" label="Estado" width="10%" ></listheader>
+					
+				</listhead>
+				<template name="model">
+				
+			
+					<listitem>
+						
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${each.titulo}"/>
+							<label if="${each.estatus=='Activo'}" value= "${each.titulo}"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${each.descripcion}"/>
+							<label if="${each.estatus=='Activo'}" value="${each.descripcion}"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${each.tarifa}"/>
+							<label if="${each.estatus=='Activo'}" value="${each.tarifa}"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${each.estado}"/>
+							<label if="${each.estatus=='Activo'}" value="${each.estado}"/>
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+	<div id="divMenuItem" align="center" height="50px">	
+				<hlayout style="padding: 20px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Actualizar" id="btnActualizar"/>
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="Cancelar" id="btnCancelar"/>
+				</hlayout>	
+			</div>
+</div>

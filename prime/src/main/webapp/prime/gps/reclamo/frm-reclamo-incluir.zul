@@ -1,0 +1,114 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gps.reclamo.ControladorReclamoIncluir">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Reclamo</a>
+		<a href="#">Solicitar</a>
+	</div>
+	<space/>
+		
+		<div>
+		<div id="divDatosPrincipales" visible="true" align="left" style="margin-left:5%;" width="80%">
+			<tabbox >
+		        <tabs>
+		            <tab label="Orden de Entrega" />
+		            <tab label="Garantia" />
+		             <tab label="Reclamo" />
+		        </tabs>
+		        <tabpanels>		            
+		            <tabpanel>
+		            	<div visible="true" width="30%" >
+							<label value="Fecha"  />
+						</div>
+						<div visible="true" width="60%" >
+							<textbox id="txtFechaOrdenEntrega" zclass="form-control" width="50%" height="auto"/>
+						</div>
+						<space/>
+		            	<div visible="true">
+							<label value="Descripción"  />
+						</div>
+						<vlayout>
+							<textbox id="txtDescOrdenEntrega" zclass="form-control"  width="90%" height="auto" multiline = "true" tabindex="6" maxlength="255" 
+							style="resize:vertical;max-height:100px; min-height:50px;" />
+						</vlayout>
+		            </tabpanel>
+		            <tabpanel>
+		            	<div visible="true" width="30%" >
+							<label value="Fecha"  />
+						</div>
+						<div visible="true" width="60%" >
+							<textbox zclass="form-control"  id="txtFechaGarantia" width="50%" height="auto"/>
+						</div>
+						<space/>
+						<div visible="true" width="30%" >
+							<label value="Tiempo Garantia"  />
+						</div>
+						<div visible="true" width="60%" >
+							<textbox zclass="form-control"  id="txtTiempoGarantia" width="50%" height="auto"/>
+						</div>
+						<space/>
+		            	<div visible="true">
+							<label value="Descripción"  />
+						</div>
+						<vlayout>
+							<textbox zclass="form-control"  id="txtDescGarantia" width="90%" height="auto" multiline = "true" tabindex="6" maxlength="255" 
+							style="resize:vertical;max-height:100px; min-height:50px;" />
+						</vlayout>
+		            </tabpanel>
+		             <tabpanel>
+						<div visible="true">
+							<label value="Tipo de Reclamo"  />
+							<label value=" *" style="color: red" />
+						</div>
+						<vlayout>
+							<combobox id="cmbTipoReclamo" value="Seleccione" width="200px" readonly="true">
+					        	<template name="model">
+					            	<comboitem label="${each.descripcion}"/>
+					            </template>
+					         </combobox>
+					     </vlayout>
+						<space/>
+						<div visible="true">
+							<label value="Descripción"  />
+							<label value=" *" style="color: red" />
+						</div>
+						<vlayout>
+							<textbox zclass="form-control"  id="txtDescripcion" width="92.7%" height="50px" multiline = "true" tabindex="6" maxlength="255" 
+								style="resize:vertical;max-height:100px; min-height:50px;" />
+							<label id="ermsgDescripcion" style="color: red"/>
+						</vlayout>
+						<hlayout style="padding: 20px">
+							<button sclass="btn-primary btn-mini" zclass="btn"
+								label="Generar" id="btnAceptar"/>
+						</hlayout>
+		            </tabpanel>
+		        </tabpanels>
+		    </tabbox>
+		    <space />
+		    <space />
+			<div id="divMenuItem" align="center" height="50px">	
+				<hlayout style="padding: 20px">
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="Cancelar" id="btnCancelar"/>
+				</hlayout>	
+			</div>
+		    
+		</div>
+			
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+		</div>
+</div>

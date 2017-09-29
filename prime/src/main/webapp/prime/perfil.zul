@@ -1,0 +1,451 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gs.servicio.ControladorPerfil">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-home">
+			Configuracion
+			<custom-attributes title="Go to Home" />
+		</a>
+		<a href="#">Mi Perfil</a>
+	</div>
+
+
+
+	<style>
+		.nav_toolbar .z-toolbarbutton-content i { font-size: 20px;}
+		.nav_tabs .z-tabpanel { padding: 0; border-bottom: 0 none;}
+		.nav_tabs .z-tabpanels .z-toolbarbutton-content { padding: 4px;}
+		.nav_category { cursor:pointer; } .nav_text { color: #696569;
+		font-size : 24px; font-weight: bold;}
+	</style>
+
+	<separator height="0px"></separator>
+	<zscript><![CDATA[
+	void updateCategory(String category) {
+		current_category.setValue(category);
+		current_subpage.setValue("Index");
+	}
+	void updateSubPage(String sub) {
+		current_subpage.setValue(sub);
+	}
+]]></zscript>
+
+
+	<vlayout xmlns:n="native" style="padding: 0px">
+
+	</vlayout>
+
+
+
+
+	<tabbox width="90%" sclass="nav_tabs">
+
+		<tabs>
+			<tab>Cliente</tab>
+			<tab>Usuario y Contrasena</tab>
+
+
+		</tabs>
+		<tabpanels>
+
+
+
+
+			<tabpanel>
+
+
+				<div sclass=""
+					style="margin: 0 auto; margin-top: 35px;width: 80%; height: 950px; border-radius: 10px 10px 10px 10px;">
+					<div sclass="content-header"
+						style="border-radius: 10px 10px 10px 10px;">
+<separator></separator>
+						<div id="divDatosPrincipales4" style="margin-center: 30%;" visible="true" align="center" >
+			             	<groupbox mold="3d" style="max-width: 1000px;">
+								<caption label="Datos del Cliente" />
+								
+										<grid>
+											<columns>
+											<column width="20%" />
+							<column width="30%" />
+							<column width="20%" />
+							<column width="30%" />
+											</columns>
+											<rows>
+											  <row style="background:#FFFFFF;border:none; vertical-align: top;" >
+								                <div visible="true">
+									             <label value="Cedula:"  />
+									         <label value=" *"
+										      style="color: red" />
+								          </div>
+							            	<vlayout>
+								         	<textbox id="txt_cedula"  zclass="form-control" readonly="true" />
+									        <label id="ermsgCedula" style="color: red"/>
+								            </vlayout>
+								            </row>
+								            
+								             <row style="background:#FFFFFF;border:none; vertical-align: top;" >
+								                <div visible="true">
+									             <label value="Nombre:"  />
+									         <label value=" *"
+										      style="color: red" />
+								          </div>
+							            	<vlayout>
+								         	<textbox id="txt_nombre"  zclass="form-control" readonly="true" />
+									        <label id="ermsgNombre" style="color: red"/>
+								            </vlayout>
+								             <div visible="true">
+									             <label value="Apellido:"  />
+									         <label value=" *"
+										      style="color: red" />
+								          </div>
+							            	<vlayout>
+								         	<textbox id="txt_apellido"  zclass="form-control" readonly="true" />
+									        <label id="ermsgApellido" style="color: red"/>
+								            </vlayout>
+								            
+								            </row>
+								            
+								              <row style="background:#FFFFFF;border:none; vertical-align: top;" >
+								                <div visible="true">
+									             <label value="Direccion:"  />
+									         <label value=" *"
+										      style="color: red" />
+								          </div>
+							            	<vlayout>
+								         	<textbox id="txt_direccion"  zclass="form-control" readonly="true" />
+									        <label id="ermsgDireccion" style="color: red"/>
+								            </vlayout>
+								             <div visible="true">
+									             <label value="Telefono:"  />
+									         <label value=" *"
+										      style="color: red" />
+								          </div>
+							            	<vlayout>
+								         	<textbox id="txt_telefono"  zclass="form-control" readonly="true" />
+									        <label id="ermsgTelefono" style="color: red"/>
+								            </vlayout>
+								            
+								            </row>
+								            
+								              <row style="background:#FFFFFF;border:none; vertical-align: top;" >
+								                <div visible="true">
+									             <label value="Sexo:"  />
+									         <label value=" *"
+										      style="color: red" />
+								          </div>
+							            	 <vlayout>
+						                    <combobox id="cmb_sexo" zclass="" readonly="true" placeholder="Seleccione" height="40px">
+						                    	<comboitem label="Masculino" value="Masculino" />
+						                    	<comboitem label="Femenino" value="Femenino" />
+						                    </combobox>
+					                    </vlayout>
+								             <div visible="true">
+									             <label value="Fecha de Nacimiento:"  />
+									         <label value=" *"
+										      style="color: red" />
+								          </div>
+							            	<vlayout>
+								          <datebox id="dtb_fecha_nac" cols="20" format="dd/MM/yyyy" readonly="true"  onCreate="self.value = new Date()" zclass="" width="" style="margin-bottom: 10px;"/>
+									        <label id="ermsgdtb_fecha_nac" style="color: red"/>
+								            </vlayout>
+								            
+								            </row>
+								            
+								            
+											
+											
+								            <row
+													zclass="form-group">
+													
+													<label
+														style="padding-right: 0px;">
+														Foto:
+													</label>
+													<image id="pics"
+														src="/static/images/foto.png" sclass="img-thumbnail"
+														height="148px;" width="148px" />
+												</row>
+								            
+											
+											
+												
+												
+												 <row style="background:#FFFFFF;border:none; vertical-align: top;" >
+								                <div visible="true">
+									           
+									               <label   style="color: red" />
+								                     </div>
+								                     <vlayout>
+														<textbox
+															id="txt_url_foto" readonly="true" zclass=""
+															placeholder="Ext: .png .jpg" />
+														<button
+															label="Examinar" upload="true" class="btn-xs"
+															id="btnSubirImagen">
+															<attribute name="onUpload">
+													org.zkoss.util.media.Media media = event.getMedia();
+													if (media instanceof org.zkoss.image.Image) {
+														org.zkoss.image.Image img = (org.zkoss.image.Image) media;
+														pics.setHeight("148px");
+														pics.setWidth("148px");
+														pics.setContent(img);
+													} else {
+														Messagebox.show(media+" no es una imagen valida", "Error", Messagebox.OK, Messagebox.ERROR);
+														break; //not to show too many errors
+													}
+												</attribute>
+											</button>
+											</vlayout>
+					                	
+					                </row>
+					               
+					               
+					               
+					            </rows>
+					        </grid>
+						
+				</groupbox>
+				</div>
+			<separator></separator>
+			
+			<div id="divDatosPrincipales45" visible="true" align="center" >
+				<groupbox mold="3d" style="max-width: 110%;">
+					<caption label="Datos de interes del Cliente" />
+					<grid style="border:none;">
+						<columns>
+							<column width="25%" />
+							<column width="25%" />
+							<column width="25%" />
+							<column width="25%" />
+						</columns>
+						<rows>
+						
+							<row style="background:#FFFFFF;border:none; vertical-align: top;" >
+								<div visible="true">
+									<label value="Ocupacion"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									 <combobox id="cmbOcupacion" value="Seleccione" width="200px" readonly="true">
+					                    <template name="model">
+					                        <comboitem label="${each.descripcion}"/>
+					                    </template>
+					                </combobox>
+					        	</vlayout>
+					        	
+					        	<div visible="true">
+									<label value="Profesion"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									 <combobox id="cmbProfesion" value="Seleccione" width="200px" readonly="true">
+					                    <template name="model">
+					                        <comboitem label="${each.descripcion}"/>
+					                    </template>
+					                </combobox>
+					        	</vlayout>
+					        	
+					        	
+							</row>
+							
+							
+							<row style="background:#FFFFFF;border:none; vertical-align: top;">
+								<div visible="true">
+									<label value="Pasatiempo"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									 <combobox id="cmbPasatiempo" value="Seleccione" width="200px" readonly="true">
+					                    <template name="model">
+					                        <comboitem label="${each.descripcion}"/>
+					                    </template>
+					                </combobox>
+					        	</vlayout>
+					        	<div visible="true">
+									<label value="Deporte"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									 <combobox id="cmbDeporte" value="Seleccione" width="200px" readonly="true">
+					                    <template name="model">
+					                        <comboitem label="${each.descripcion}"/>
+					                    </template>
+					                </combobox>
+					        	</vlayout>
+					        	
+							</row>
+																	
+													
+						</rows>
+					</grid>
+				</groupbox>
+			</div>
+			
+		<!-- 	
+			<vlayout xmlns:n="native"  style="padding: 20px">
+				<panel border="normal">
+					<caption>
+						<div style="margin-left: 30%;">Datos del Usuario</div>
+					</caption>
+					<panelchildren>
+						<div class="row-fluid">
+							<grid>
+					            <columns>
+					            	<column width="20%"/>
+					                <column width="20%"/>
+					                <column width="60%" />
+					            </columns>
+					            <rows>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Correo:</label>
+					                    <textbox id="txt_correo" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Contraseña:</label>
+					                    <textbox id="txt_contrasenna" type="password" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Pregunta Secreta:</label>
+					                    <textbox id="txt_pregunta_secreta" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Respuesta Secreta:</label>
+					                    <textbox id="txt_respuesta_secreta" type="password"  zclass="form-control" width=""/>
+					                </row>
+					            </rows>
+					        </grid>
+						</div>
+					</panelchildren>
+				</panel>
+			</vlayout>
+			-->
+	        <space></space>
+	        <div class="row-fluid">
+				<grid>
+		            <columns>
+		            	<column width="20%"/>
+		                <column width="20%"/>
+		                <column width="20%" />
+		                <column width="20%" />
+		                <column width="20%"/>
+		            </columns>
+		            <rows>
+		                <row zclass="form-group" align="center">
+		                	<cell></cell>                
+		                	<button sclass="btn-primary btn" 
+								label="Registrar" id="btnModificarPerfil"/>
+						 <button sclass="btn-danger btn" 
+								label="Volver" id="btn_volver"/> 
+						<!-- 	<button sclass="btn-danger btn" 
+								label="Cancelar" id="btn_cancelar"/> -->
+							<cell></cell>  
+		                </row>
+		            </rows>
+		       	</grid>
+			</div>
+	        <space></space>
+		</div>
+		<space></space>
+        <space></space>
+        <space></space>
+        <space></space>
+	</div>
+	<script src="/static/js/excanvas.min.js" type="" if="${zk.ie lt 9}" ></script>	
+<script src="/static/js/jquery.flot.min.js"></script>
+<script src="/static/js/jquery.peity.min.js"></script>
+	
+	</tabpanel>
+	
+	
+	
+	<tabpanel>
+	<separator></separator>
+	
+	<div id="divDatosPrincipales4558" visible="true" align="center" >
+				<groupbox mold="3d" style="max-width: 85%;">
+					<caption label="Datos de; Usuario" />
+							<grid>
+					            <columns>
+					            	<column width="20%"/>
+					                <column width="20%"/>
+					                <column width="60%" />
+					            </columns>
+					            <rows>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Correo:</label>
+					                    <textbox id="txt_correo"   zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Contraseña:</label>
+					                    <textbox id="txt_contrasenna" type="password" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Pregunta Secreta:</label>
+					                    <textbox id="txt_pregunta_secreta" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Respuesta Secreta:</label>
+					                    <textbox id="txt_respuesta_secreta" type="password"  zclass="form-control" width=""/>
+					                </row>
+					            </rows>
+					        </grid>
+					        </groupbox>
+					        </div>
+					
+			
+			<separator></separator>
+			<separator></separator>
+			
+			<div class="row-fluid">
+				<grid>
+		            <columns>
+		            	<column width="20%"/>
+		                <column width="20%"/>
+		                <column width="20%" />
+		                <column width="20%" />
+		                <column width="20%"/>
+		            </columns>
+		            <rows>
+		                <row zclass="form-group" align="center">
+		                	<cell></cell>                
+		                	<button sclass="btn-primary btn" 
+								label="Modificar" id="btnUsuarioContrasena"/>
+						 <button sclass="btn-danger btn" 
+								label="Volver" id="btnbtn"/> 
+						<!-- 	<button sclass="btn-danger btn" 
+								label="Cancelar" id="btn_cancelar"/> -->
+							<cell></cell>  
+		                </row>
+		            </rows>
+		       	</grid>
+			</div>
+	
+	
+	
+	
+	</tabpanel>
+	
+	
+		
+	
+	</tabpanels>
+	
+	</tabbox>
+	
+	
+	
+	
+</div>
+

@@ -1,0 +1,2 @@
+insert into preguntafrecuente(id,estatus,fechacreacion,fechamodificacion,pregunta,respuesta)
+values (1,'Activo','2017-03-17 19:41:25.013','2017-03-17','Al cambiar de marca de lubricante se daña el motor','Esta idea es totalmente falsa. Todos los lubricantes de marcas reconocidas cumplen con los requerimientos de desempeño del motor. Es muy importante que al cambiar de aceite o marca, el lubricante nuevo y el antiguo sean compatibles.');

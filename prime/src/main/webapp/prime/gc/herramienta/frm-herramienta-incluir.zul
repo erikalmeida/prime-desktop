@@ -1,0 +1,68 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gc.herramienta.ControladorHerramientaIncluir">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-home">
+			Gestion de Servicios
+			<custom-attributes title="Go to Home" />
+		</a>
+		<a href="#" id="breadcrumbHerramienta">Herramientas</a>
+	</div>
+	<vlayout xmlns:n="native" style="padding: 20px">
+		<panel border="normal">
+			<caption>
+				<div style="margin-left: 35px;">
+					Registro de información de herramientas
+				</div>
+			</caption>
+			<panelchildren>
+				<div class="row-fluid">
+					<grid>
+						<columns>
+							<column width="10%" />
+							<column width="30%" />
+							<column width="60%" />
+						</columns>
+						<rows>
+							<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Descripcion:
+								</label>
+								<textbox id="txt_descripcion"
+									zclass="form-control" width="" />
+							</row>
+
+						</rows>
+					</grid>
+					<grid>
+						<columns>
+							<column width="30%" />
+							<column width="10%" />
+							<column width="10%" />
+							<column width="10%" />
+							<column width="40%" />
+						</columns>
+						<rows>
+							<row zclass="form-group" class="text-center">
+								<cell></cell>
+								<button id="btnGuardar" type="button"
+									width="" class="btn btn-primary">
+									Registrar
+								</button>
+								
+								<button id="btnCancelar" type="button"
+									width="" class="btn btn-danger">
+									Cancelar
+								</button>
+								<cell></cell>
+							</row>
+						</rows>
+					</grid>
+				</div>
+			</panelchildren>
+		</panel>
+	</vlayout>
+	<space></space>
+	
+</div>

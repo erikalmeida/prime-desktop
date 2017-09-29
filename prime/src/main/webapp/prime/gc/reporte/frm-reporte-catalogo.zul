@@ -1,0 +1,21 @@
+<div xmlns:zk="zk" xmlns:z="zul" >
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Reporte</a>
+	</div>
+	<space/>
+	<space/>
+	<div align="center">
+		<div align="center" style="max-width: 950px;" >
+			<window apply="ucla.si.controlador.gc.reporte.ControladorReporteCatalogo">
+			    <charts id="chart" type="column"
+			        title="Servialdana's"
+			        subtitle="Servicios mas solicitados"/>
+			</window>
+		</div>
+	</div>
+</div>

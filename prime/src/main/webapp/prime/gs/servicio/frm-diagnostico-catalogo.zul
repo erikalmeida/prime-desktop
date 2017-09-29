@@ -1,0 +1,141 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gs.servicio.ControladorDiagnosticoCatalogoRecibido">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-date">
+			Servicio
+			<custom-attributes title="Atender Solicitud" />
+		</a>
+		<a href="#">Diagnostico</a>
+	</div>
+	<space />
+	<div align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Diagnosticar" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row
+						style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<datebox id="txtBuscar"
+								placeholder="Introduzca su búsqueda" width="40%" maxlength="50" />
+							<combobutton label="Acciones">
+
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+			<space />
+		</groupbox>
+	</div>
+	<space />
+	<div align="center">
+		<div align="center" style="max-width: 950px;">
+			<listbox id="listCitas" checkmark="false"
+				nonselectableTags="*" oddRowSclass="none"
+				emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="11%"></listheader>
+					<listheader align="left"
+						label="Fecha de la Solicitud" width="20%">
+					</listheader>
+					<listheader align="left" label="Nombre del Cliente"
+						width="15%">
+					</listheader>
+					<listheader align="left" label="Marca"
+						width="15%">
+					</listheader>
+					<listheader align="left" label="Modelo"
+						width="15%">
+					</listheader>
+					<listheader align="left" label="Servicio"
+						width="15%">
+					</listheader>
+					<listheader align="left" label="Promocion"
+						width="15%">
+					</listheader>
+					<listheader align="left" label="Estatus"
+						width="10%">
+					</listheader>
+
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell style="text-align:left;">
+
+							<button
+								class="btn btn-primary btn-xs consultar" width="15%"
+								iconSclass="z-icon-clipboard" tooltiptext="Detalle" />
+
+						</listcell>
+						<listcell style="text-align:left;">
+
+							<label if="${each.estatus=='Inactivo'}"
+								style="color: red" value="${each.fechaCreacion}" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.fechaCreacion}" style="color: black" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								style="color: red"
+								value="${each.vehiculo.usuario.persona.nombre} ${each.vehiculo.usuario.persona.apellido}" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.vehiculo.usuario.persona.nombre} ${each.vehiculo.usuario.persona.apellido}"
+								style="color: black" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								style="color: red" value="${each.vehiculo.marca.nombre}" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.vehiculo.marca.nombre}" style="color: black" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								value="${each.vehiculo.modelo.nombre}" style="color: red" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.vehiculo.modelo.nombre}" style="color: black" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								value="${each.servicio.titulo}" style="color: red" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.servicio.titulo}" style="color: black" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								value="${each.promocion.titulo}" style="color: red" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.promocion.titulo}" style="color: black" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								value="${each.estatus}" style="color: red" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.estatus}" style="color: black" />
+						</listcell>
+					</listitem>
+				</template>
+
+			</listbox>
+
+			<space></space>
+			<space></space>
+			<div id="divMenuEtapa" align="center" height="50px">
+				<hlayout style="padding: 20px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Realizar Presupuesto" id="btnRealizarPresupuesto" />
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="Volver" id="btnVolverEtapa" />
+
+				</hlayout>
+			</div>
+			<space></space>
+			<space></space>
+		</div>
+	</div>
+</div>

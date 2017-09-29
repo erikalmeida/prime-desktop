@@ -1,0 +1,202 @@
+<?page title="Registrar | Prime" ?>
+<?link rel="shortcut icon" href="/static/ico/prime-teal-16.png"?>
+<?component name="button" extends="button" width="44px" height="44px"?>
+<?link rel="stylesheet" type="text/css"	href="/static/bootstrap/css/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="/static/css/index.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/user-nav.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/sidebar.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/search.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/content-header.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/styles.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/login.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/admin.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/modal.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/load.css" ?>
+
+<?link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" ?>
+
+<zk xmlns:n="native">
+<html>
+	<![CDATA[ 
+<meta charset="UTF-8">
+	]]>
+</html>
+<div>				
+	<div sclass="header">
+		<n:h1> 
+			<a>Prime </a>
+		</n:h1>
+	</div>
+	
+	<div sclass="" style="margin: 0 auto; margin-top: 75px;width: 60%; height: 400px; border-radius: 10px 10px 10px 10px;">
+		<div sclass="content-header" style="border-radius: 10px 10px 10px 10px;" 
+		apply="ucla.si.controlador.gc.cliente.ControladorCliente">
+			<n:h1 align="center">Registrar Cliente</n:h1>
+			<vlayout xmlns:n="native" style="padding: 20px">
+				<panel border="normal">
+					<caption>
+						<div style="margin-left: 30%;">Datos del Cliente</div>
+					</caption>
+					<panelchildren>
+						<div class="row-fluid">
+							<grid>
+					            <columns>
+					            	<column width="20%"/>
+					                <column width="20%"/>
+					                <column width="60%" />
+					            </columns>
+					            <rows>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Nombre:</label>
+					                    <textbox id="txt_nombre" zclass="form-control" width="" tabindex="1"/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Apellido:</label>
+					                    <textbox id="txt_apellido" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Cedula:</label>
+					                    <textbox id="txt_cedula" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Foto:</label>
+					                    <image id="pics" src="/static/images/foto.png" sclass="img-thumbnail" height="148px;" width="148px"/>
+					                </row> 
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                	<cell></cell>
+					                	<div zclass="form-group">
+						                    <textbox id="txt_url_foto" readonly="true"  zclass="" placeholder="Ext: .png .jpg"/>			                    
+						                	<button label="Examinar" upload="true" class="btn-xs" id="btnSubirImagen">
+												<attribute name="onUpload">
+													org.zkoss.util.media.Media media = event.getMedia();
+													if (media instanceof org.zkoss.image.Image) {
+														org.zkoss.image.Image img = (org.zkoss.image.Image) media;
+														pics.setHeight("148px");
+														pics.setWidth("148px");
+														pics.setContent(img);
+													} else {
+														Messagebox.show(media+" no es una imagen valida", "Error", Messagebox.OK, Messagebox.ERROR);
+														break; //not to show too many errors
+													}
+												</attribute>
+											</button>
+					                	</div>
+					                </row>
+					                <row zclass="form-group" style="padding-top: 10px;">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Dirección:</label>
+					                    <textbox id="txt_direccion" zclass="form-control" rows="3" style="" width=""/>
+					                </row>
+					                <row zclass="form-group" style="padding-top: 10px;">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Telefono:</label>
+					                    <textbox id="txt_telefono" zclass="form-control" style="" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Sexo:</label>
+					                    <vlayout>
+						                    <combobox id="cmb_sexo" zclass="" readonly="true" placeholder="Seleccione" height="40px">
+						                    	<comboitem label="Masculino" value="Masculino" />
+						                    	<comboitem label="Femenino" value="Femenino" />
+						                    </combobox>
+					                    </vlayout>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Fecha de Nac.:</label>
+					                    <datebox id="dtb_fecha_nac" cols="20" format="dd/MM/yyyy" readonly="true"  onCreate="self.value = new Date()" zclass="" width="" style="margin-bottom: 10px;"/>
+					                </row>
+					            </rows>
+					        </grid>
+						</div>
+					</panelchildren>
+				</panel>
+			</vlayout>
+			
+			<vlayout xmlns:n="native" style="padding: 20px">
+				<panel border="normal">
+					<caption>
+						<div style="margin-left: 30%;">Datos del Usuario</div>
+					</caption>
+					<panelchildren>
+						<div class="row-fluid">
+							<grid>
+					            <columns>
+					            	<column width="20%"/>
+					                <column width="20%"/>
+					                <column width="60%" />
+					            </columns>
+					            <rows>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Correo:</label>
+					                    <textbox id="txt_correo" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Contraseña:</label>
+					                    <textbox id="txt_contrasenna" type="password" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Pregunta Secreta:</label>
+					                    <textbox id="txt_pregunta_secreta" zclass="form-control" width=""/>
+					                </row>
+					                <row zclass="form-group">
+					                	<cell></cell>
+					                    <label style="padding-left: 20px;">Respuesta Secreta:</label>
+					                    <textbox id="txt_respuesta_secreta" type="password"  zclass="form-control" width=""/>
+					                </row>
+					            </rows>
+					        </grid>
+						</div>
+					</panelchildren>
+				</panel>
+			</vlayout>
+	        <space></space>
+	        <div class="row-fluid">
+				<grid>
+		            <columns>
+		            	<column width="20%"/>
+		                <column width="20%"/>
+		                <column width="20%" />
+		                <column width="20%" />
+		                <column width="20%"/>
+		            </columns>
+		            <rows>
+		                <row zclass="form-group" align="center">
+		                	<cell></cell>                
+		                	<button sclass="btn-primary btn" 
+								label="Registrar" id="btn_registrar"/>
+							<button sclass="btn-success btn" 
+								label="Volver" id="btn_volver"/>
+							<button sclass="btn-danger btn" 
+								label="Cancelar" id="btn_cancelar"/>
+							<cell></cell>  
+		                </row>
+		            </rows>
+		       	</grid>
+			</div>
+	        <space></space>
+		</div>
+		<space></space>
+        <space></space>
+        <space></space>
+        <space></space>
+	</div>
+</div>
+<script src="/static/js/excanvas.min.js" type="" if="${zk.ie lt 9}" ></script>	
+<script src="/static/js/jquery.flot.min.js"></script>
+<script src="/static/js/jquery.peity.min.js"></script>
+
+</zk>

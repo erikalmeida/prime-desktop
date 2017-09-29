@@ -1,0 +1,173 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gps.reclamo.ControladorReclamoVerificarGarantia">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Reclamo</a>
+		<a href="#">Verificar Garantia</a>
+	</div>
+	<space/>
+		<div>
+			<div id="divDatosPrincipales" visible="true" align="left" style="margin-left:5%;" width="80%">
+				<tabbox >
+			        <tabs>
+			            <tab label="Reclamo" />
+			            <tab label="Cliente" />
+			            <tab label="Vehiculo" />
+			            <tab label="Orden de Entrega" />
+			            <tab label="Garantia" />
+			        </tabs>
+			        <tabpanels>
+			            <tabpanel>
+			            	<div visible="true" width="30%" >
+								<label value="Tipo de Reclamo"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtTipoReclamo" width="50%" height="auto"/>
+							</div>
+							<space/>
+							<div visible="true" width="30%" >
+								<label value="Fecha"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtFechaReclamo" width="50%" height="auto"/>
+							</div>
+							<space/>
+							<div visible="true">
+								<label value="Descripción"  />
+							</div>
+							<vlayout>
+								<textbox zclass="form-control"  id="txtDescripcion" width="90%" height="auto" multiline = "true" tabindex="6" maxlength="255" 
+								style="resize:vertical;max-height:100px; min-height:50px;" />
+								<label id="ermsgDescripcion" style="color: red"/>
+							</vlayout>
+			            </tabpanel>
+			            <tabpanel>
+			            	<div visible="true" width="30%" >
+								<label value="Foto"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteFoto" width="50%" height="auto"/>
+							</div>
+			            	<div visible="true" width="30%" >
+								<label value="Nombre"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteNombre" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Apellido"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteApellido" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Direccion"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteDireccion" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Correo"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteCorreo" width="50%" height="auto"/>
+							</div>
+			            </tabpanel>
+			            <tabpanel>
+			            	<div visible="true" width="30%" >
+								<label value="Placa"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtAutoPlaca" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Marca"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtAutoMarca" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Año"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtAutoAnno" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Modelo"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control" id="txtAutoModelo" width="50%" height="auto"/>
+							</div>
+			            </tabpanel>
+			            <tabpanel>
+			            	<div visible="true" width="30%" >
+								<label value="Fecha"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control" id="txtFechaOrdenEntrega" width="50%" height="auto"/>
+							</div>
+							<space/>
+			            	<div visible="true">
+								<label value="Descripción"  />
+							</div>
+							<vlayout>
+								<textbox zclass="form-control"  id="txtDescOrdenEntrega" width="90%" height="auto" multiline = "true" tabindex="6" maxlength="255" 
+								style="resize:vertical;max-height:100px; min-height:50px;" />
+							</vlayout>
+			            </tabpanel>
+			            <tabpanel>
+			            	<div visible="true" width="30%" >
+								<label value="Fecha"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtFechaGarantia" width="50%" height="auto"/>
+							</div>
+							<space/>
+							<div visible="true" width="30%" >
+								<label value="Tiempo Garantia"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtTiempoGarantia" width="50%" height="auto"/>
+							</div>
+							<space/>
+			            	<div visible="true">
+								<label value="Descripción"  />
+							</div>
+							<vlayout>
+								<textbox zclass="form-control"  id="txtDescGarantia" width="90%" height="auto" multiline = "true" tabindex="6" maxlength="255" 
+								style="resize:vertical;max-height:100px; min-height:50px;" />
+							</vlayout>
+			            </tabpanel>
+			        </tabpanels>
+			    </tabbox>
+			</div>
+			<div id="divMenuItem" align="center" height="50px" >	
+				<hlayout style="padding: 20px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Procede" id="btnAceptar"/>
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="No Procede" id="btnNoProcede"/>
+				</hlayout>
+
+				<hlayout style="padding: 0px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Volver" id="btnVolver"/>
+				</hlayout>	
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+		</div>
+</div>

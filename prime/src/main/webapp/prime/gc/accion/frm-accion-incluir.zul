@@ -1,0 +1,61 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gc.accion.ControladorAccionIncluir">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Acción</a>
+		<a href="#">Incluir</a>
+	</div>
+	<space/>
+		<div>
+			<div id="divDatosPrincipales" visible="true" align="center" >
+				<groupbox mold="3d" style="max-width: 950px;">
+					<caption label="Acción" />
+					<grid style="border:none;">
+						<columns>
+							<column width="20%" />
+							<column width="30%" />
+							<column width="20%" />
+							<column width="30%" />
+						</columns>
+						<rows>
+							<row style="background:#FFFFFF;border:none;">
+								<div visible="true">
+									<label value="Nombre" />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<textbox id="txtNombre" width="80%" tabindex="3" maxlength="30" />
+									<label style="color: red"/>
+								</vlayout>
+							</row>
+						</rows>
+					</grid>
+				</groupbox>
+			</div>
+			<space />
+			<div id="divMenuItem" align="center" height="50px">	
+				<hlayout style="padding: 20px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Aceptar" id="btnAceptar"/>
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="Cancelar" id="btnCancelar"/>
+				</hlayout>	
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+		</div>
+</div>

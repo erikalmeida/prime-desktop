@@ -1,0 +1,389 @@
+
+
+
+
+
+
+
+
+
+
+<?page title="Bienvenido (Usuario) | Prime"?>
+<?meta charset="utf-8"?>
+<?meta name="description" content="1.0"?>
+<?meta name="keywords" content="Prime, SERVIALDANA, UCLA DCYT"?>
+<?meta name="author" content="Equipo Uno Sistemas de Información"?>
+<?meta http-equiv="content-type" content="text/html; charset=UTF-8"?>
+<?meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="shortcut icon" href="/static/ico/prime-teal-16.png"?>
+<?component name="button" extends="button" width="44px" height="44px"?>
+<?link rel="stylesheet" type="text/css"	href="/static/bootstrap/css/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="/static/css/index.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/user-nav.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/sidebar.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/search.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/content-header.css.dsp" ?>
+<?link id="theme" rel="stylesheet" type="text/css"
+	href="/static/css/blue.css.dsp"?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/styles.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/admin.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/modal.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/load.css" ?>
+<?link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" ?>
+
+<zk xmlns:n="native">
+
+		<div apply="ucla.si.controlador.app.ControladorMenu2">
+			<popup id="btntip" sclass="btn-tip"
+				style="margin-top: 10px">
+				<label id="msg" value="Manage Files"></label>
+				<attribute name="onOpen">
+		if (event.isOpen()) {
+			msg.setValue(event.getReference().getAttribute("title").toString());
+		}
+		</attribute>
+	</popup>
+
+	<div sclass="header">
+		<n:h1>
+			<a>Prime</a>
+		</n:h1>
+	</div>
+
+	<div sclass="search" style="display:none">
+		<bandbox placeholder="Buscar..." id="bboxBuscar" ctrlKeys="^c^x#f8#f9"/>
+	</div>
+	<div sclass="user-nav">
+		<menubar>
+			<menuitem iconSclass="icon icon-white icon-user" label="Perfil" id="dashboard"/>
+			<menu iconSclass="icon icon-white icon-envelope" label="Mensajes">
+				<menupopup sclass="navpp">
+					<menuitem label="Nuevo mensaje" id="nuevoCorreo"/>
+					<menuitem label="Bandeja de entrada" />
+					<menuitem label="Bandeja de salida" />
+					<menuitem label="Papelera" />
+				</menupopup>
+			</menu>
+			<menuitem iconSclass="icon icon-white icon-cog" label="Configuración" />
+			<menuitem iconSclass="icon icon-white icon-share-alt" label="Salir" id="logout"/>
+		</menubar>
+	</div>
+
+	<navbar orient="vertical" sclass="sidebar" id="menu">
+		<nav label="Inicio" iconSclass="icon icon-white icon-lugar" id="nivel1Inicio"/>
+		<nav label="Administración de Recursos" iconSclass="icon icon-white icon-bookshelf" id="nivel1AdministracionRecursos">
+			<nav label="General"  iconSclass="icon icon-white icon-prime-white " id="nivel2General">
+				<nav label="Opciones de Cliente"  iconSclass="icon icon-white icon-usuario" id="nivel3Cliente">
+					<navitem label="Ocupación" iconSclass="icon icon-bullet-go" id="nivel4Ocupacion"/>
+					<navitem label="Profesión" iconSclass="icon icon-bullet-go" id="nivel4Profesion"/>
+					<navitem label="Pasatiempo" iconSclass="icon icon-bullet-go" id="nivel4Pasatiempo"/>
+					<navitem label="Ciudad" iconSclass="icon icon-bullet-go" id="nivel4Ciudad"/>
+					<navitem label="Estado" iconSclass="icon icon-bullet-go" id="nivel4Estado"/>
+					
+					<navitem label="Motivo" iconSclass="icon icon-user-add" id="nivel4Motivo"/>
+					<navitem label="Deporte" iconSclass="icon icon-user-add" id="nivel4Deporte"/>
+					<navitem label="Viaje" iconSclass="icon icon-user-add" id="nivel4Viaje"/>
+				</nav>
+
+				<nav label="Opciones de Vehículo" iconSclass="icon icon-white icon-car" id="nivel3Vehiculo">
+					<navitem label="Marca" iconSclass="icon icon-bullet-go" id="nivel4Marca"/>
+					<navitem label="Modelo" iconSclass="icon icon-bullet-go" id="nivel4Modelo"/>
+					<navitem label="Uso" iconSclass="icon icon-bullet-go" id="nivel4Uso"/>
+					<navitem label="Color" iconSclass="icon icon-bullet-go" id="nivel4Color"/>
+					<navitem label="Tipo de Motor" iconSclass="icon icon-bullet-go" id="nivel4TipoMotor"/>
+					<navitem label="Motor" iconSclass="icon icon-bullet-go" id="nivel4Motor"/>
+					<navitem label="Rectificación" iconSclass="icon icon-bullet-go" id="nivel4Rectificacion"/>
+					<navitem label="Tipo de Clase" iconSclass="icon icon-bullet-go" id="nivel4TipoClase"/>
+					<navitem label="Clase" iconSclass="icon icon-bullet-go" id="nivel4Clase"/>
+					<navitem label="Marca de Repuesto" iconSclass="icon icon-bullet-go" id="nivel4MarcaRepuesto"/>
+					<navitem label="Tipo de Caja" iconSclass="icon icon-bullet-go" id="nivel4TipoCaja"/>
+					<navitem label="Caja" iconSclass="icon icon-bullet-go" id="nivel4Caja"/>
+					<navitem label="Tipo de Aceite" iconSclass="icon icon-bullet-go" id="nivel4TipoAceite"/>
+					<navitem label="Grosor de Aceite" iconSclass="icon icon-bullet-go" id="nivel4GrosorAceite"/>
+					<navitem label="Aceite" iconSclass="icon icon-bullet-go" id="nivel4Aceite"/>
+					<navitem label="Tipo de Combustible" iconSclass="icon icon-bullet-go" id="nivel4TipoCombustible"/>
+					<navitem label="Combustible" iconSclass="icon icon-bullet-go" id="nivel4Conbustible"/>
+					<navitem label="Tipo de Refrigerante" iconSclass="icon icon-bullet-go" id="nivel4TipoRefrigerante"/>
+					<navitem label="Refrigerante" iconSclass="icon icon-bullet-go" id="nivel4Refrigerante"/>
+					
+					<navitem label="Marca de Tecnología" iconSclass="icon icon-bullet-go" id="nivel4MarcaTecnologia"/>
+					<navitem label="Repuesto" iconSclass="icon icon-bullet-go" id="nivel4TipoRepuesto"/>
+					<navitem label="Vehículo" iconSclass="icon icon-car-add" id="nivel4Vehiculo"/>
+				</nav>
+
+				<nav label="Opciones de Personal" iconSclass="icon icon-white icon-car" id="nivel3Personal">
+					<navitem label="Personal" iconSclass="icon icon-bullet-go" id="nivel4Personal"/>
+				</nav>
+			</nav>
+
+			<nav label="Promoción y Oferta" iconSclass="icon icon-white icon-coins-in-hand" id="nivel2PromocionOferta">
+				<navitem label="Tarifa" iconSclass="icon icon-bullet-go" id="nivel3Tarifa"/>
+				<navitem label="Descuento" iconSclass="icon icon-bullet-go" id="nivel3Descuento"/>
+ 				<navitem label="Tipo de promociones" iconSclass="icon icon-bullet-go" id="nivel3Promocion" />
+			</nav>
+
+			<nav label="Agenda y Citas" iconSclass="icon icon-white icon-date-edit" id="nivel2AgendaCitas">
+				<navitem label="Habilidades" iconSclass="icon icon-bullet-go" id="nivel3Habilidad" />
+				<navitem label="Espacio del Taller" iconSclass="icon icon-bullet-go" id="nivel3Espacio"/>
+				<navitem label="Tipo de Eventualidad" iconSclass="icon icon-bullet-go" id="nivel3TipoEventualidad"/>
+			</nav>
+
+			<nav label="Servicios" iconSclass="icon icon-white icon-wrench" id="nivel2Servicio">
+				<navitem label="Herramienta" iconSclass="icon icon-bullet-go" id="nivel3Herramienta" />
+				<navitem label="Tecnología" iconSclass="icon icon-bullet-go" id="nivel3Tecnologia" />
+				<navitem label="Tipo de Servicio" iconSclass="icon icon-bullet-go" id="nivel3TipoServicio" />
+				<navitem label="Anomalia" iconSclass="icon icon-bullet-go" id="nivel3Anomalia" />
+				<navitem label="Falla" iconSclass="icon icon-bullet-go" id="nivel3Falla" />
+			</nav>
+
+			<nav label="Post-Servicios" iconSclass="icon icon-white icon-thumb-up" id="nivel2PostServicios">
+			    <navitem label="Tipo de Garantía" iconSclass="icon icon-bullet-go" id ="nivel3TipoGarantia"/>
+				<navitem label="Tipo de Reclamo" iconSclass="icon icon-bullet-go" id ="nivel3TipoReclamo"/>
+			</nav>
+		</nav>
+
+		<nav iconSclass="icon icon-white icon-lightbulb" label="Promoción y Ofertas" id="nivel1PromocionOferta">
+			<nav label="Catálogo de Servicios" iconSclass="icon icon-white icon-book-picture" id="nivel2CatalogoServicios">
+				<navitem label="Configurar" iconSclass="icon icon-bullet-go" id="nivel3ConfigurarCatalogoServicios"/>
+				<navitem label="Actualizar" iconSclass="icon icon-bullet-go" id="nivel3ActualizarCatalogoServicios"/>
+			</nav>
+			<nav label="Promoción" iconSclass="icon icon-white icon-star" id="nivel2Promocion">
+				<navitem label="Configurar" iconSclass="icon icon-bullet-go" id ="nivel3ConfigurarPromocion"/>
+				<navitem label="Actualizar" iconSclass="icon icon-bullet-go" id ="nivel3ActualizarPromocion"/>
+			</nav>
+		</nav>
+
+		<nav label="Agenda" iconSclass="icon icon-white icon-fecha" id="nivel1Agenda">
+			<nav label="Planificación" iconSclass="icon icon-white icon-adiagramm" id="nivel2Planificacion">
+				<navitem label="Asignar Espacio" iconSclass="icon icon-bullet-go" id ="nivel3AsignarEspacio"/>
+			</nav>
+		</nav>
+
+		<nav label="Citas" iconSclass="icon icon-white icon-date" id="nivel1Citas">
+		    <navitem label="Atender Citas"  iconSclass="icon icon-white icon-date-go" id="nivel2AtenderCita"/>
+			<navitem label="Cancelar Citas" iconSclass="icon icon-date-delete" id="nivel2CancelarCita"/>
+			<navitem label="Cancelar Citas" iconSclass="icon icon-date-delete" id="nivel2AsignarEspacioCita"/>
+		</nav>
+
+		<nav label="Servicios" iconSclass="icon icon-setting-tools" id="nivel1Servicios">
+		    <navitem label="Recibir Vehículo" iconSclass="icon icon-white icon-chevron-right" id="nivel2RecibirVehiculo"/>
+		    <navitem label="Diagnósticar" iconSclass="icon icon-white icon-chevron-right" id="nivel2Diagnosticar"/>
+		    <navitem label="Aprobar Presupuesto" iconSclass="icon icon-white icon-chevron-right" id="nivel2AprobarPresupuesto"/>
+		    <navitem label="Generar Orden de Servicio" iconSclass="icon icon-white icon-chevron-right" id="nivel2GenerarOrdenServicio"/>
+		    <navitem label="Revisar Servicio Ejecutado" iconSclass="icon icon-white icon-chevron-right" id="nivel2RevisarServicio"/>
+		    <navitem label="Generar Orden de Entrega" iconSclass="icon icon-white icon-chevron-right" id="nivel2GenerarOrdenEntrega"/>
+		    <navitem label="Calificar Servicio" iconSclass="icon icon-white icon-chevron-right" id="nivel2CalificarServicio"/>
+		</nav>
+
+		<nav label="Post-Servicios" iconSclass="icon icon-white icon-thumb-up" id="nivel1PostServicios">
+			<navitem label="Solicitar Reclamo" iconSclass="icon icon-white icon-chevron-right" id="nivel2SolicitudReclamo"/>
+			<navitem label="Verificar Garantía" iconSclass="icon icon-white icon-chevron-right" id="nivel2VerificarGarantia"/>
+		</nav>
+
+		<nav label="Reportes" iconSclass="icon icon-white icon-estadistica" id="nivel1Reportes">
+			<navitem label="Reportes Estadístico" iconSclass="icon icon-white icon-chevron-right" id="nivel2ReportesEstadistico"/>
+		</nav>
+
+		<nav iconSclass="icon icon-white icon-gear-in" label="Administración del Sistema" id="nivel1AdministracionSistema">
+			<nav label="Seguridad Funcional" iconSclass="icon icon-white icon-key" id="nivel2SeguridadFuncional">
+				<navitem label="Grupo" iconSclass="icon icon-bullet-go" id="nivel3Grupo"/>
+				<navitem label="Función" iconSclass="icon icon-bullet-go" id ="nivel3Funcion"/>
+				<navitem label="Acción" iconSclass="icon icon-bullet-go" id ="nivel3Accion"/>
+				<navitem label="Asignación Grupos" iconSclass="icon icon-bullet-go" id ="nivel3AsignacionGrupos"/>
+				<navitem label="Usuario" iconSclass="icon icon-bullet-go" id="nivel3Usuario"/>
+				<navitem label="Perfil de Usuario" iconSclass="icon icon-bullet-go" id="nivel3PerfilUsuario"/>
+			</nav>
+
+			<nav label="Configuración del portal WEB" iconSclass="icon icon-white icon-laptop" id="nivel2Web">
+				<navitem label="Actualizar Contenido" iconSclass="icon icon-bullet-go" id="nivel3ActualizarContenidoWeb"/>
+			</nav>
+
+			<nav label="Configuración App Móvil" iconSclass="icon icon-white icon-phone-android " id="nivel2Movil">
+				<navitem label="Actualizar Contenido" iconSclass="icon icon-bullet-go" id="nivel3ActualizarContenidoMovil"/>
+			</nav>
+
+			<nav label="Configuración de Difusión" iconSclass="icon icon-white icon-sound" id="nivel2Difusion">
+				<navitem label="Correo Electrónico" iconSclass="icon icon-bullet-go" id="nivel3CorreoElectronico"/>
+				<navitem label="Redes Sociales" iconSclass="icon icon-bullet-go" id="nivel3RedesSociales"/>
+			</nav>
+
+			<nav label="Base de Datos" iconSclass="icon icon-database-gear" id="nivel2BaseDatos">
+				<navitem label="Respaldo" iconSclass="icon icon-bullet-go" id="nivel3Respaldo"/>
+				<navitem label="Recuperación" iconSclass="icon icon-bullet-go" id="nivel3Recuperacion"/>
+				<navitem label="Historico" iconSclass="icon icon-bullet-go" id="nivel3Historico"/>
+			</nav>
+		</nav>
+	</navbar>
+	<div sclass="content">
+		<div sclass="content-header">
+			<n:h1>Bienvenido <label value="Hello World!" id="labelUser" style="font-size: 28px;" ></label></n:h1>
+		</div>
+		<div id="app">
+		</div>
+	</div>
+</div>
+<script src="/static/js/excanvas.min.js" type="" if="${zk.ie lt 9}" ></script>
+<script src="/static/js/jquery.flot.min.js"></script>
+<script src="/static/js/jquery.peity.min.js"></script>
+<script><![CDATA[
+(function ($) {
+    var options = { }; // no options
+
+    function init(plot) {
+        function onResize() {
+            var placeholder = plot.getPlaceholder();
+
+            // somebody might have hidden us and we can't plot
+            // when we don't have the dimensions
+            if (placeholder.width() == 0 || placeholder.height() == 0)
+                return;
+
+            plot.resize();
+            plot.setupGrid();
+            plot.draw();
+            setTimeout(function () {
+            	zk.afterResize(onResize);
+            });
+        }
+        zk.afterResize(onResize);
+    }
+
+    $.plot.plugins.push({
+        init: init,
+        options: options,
+        name: 'resize',
+        version: '1.0'
+    });
+})(jQuery);
+zk.afterResize(function(){
+
+
+	// === Prepare peity charts === //
+	unicorn.peity();
+
+	// === Prepare the chart data ===/
+	var sin = [], cos = [];
+    for (var i = 0; i < 14; i += 0.5) {
+        sin.push([i, Math.sin(i)]);
+        cos.push([i, Math.cos(i)]);
+    }
+
+	// === Make chart === //
+    var plot = $.plot($(".chart"),
+           [ { data: sin, label: "sin(x)", color: "#BA1E20"}, { data: cos, label: "cos(x)",color: "#459D1C" } ], {
+               series: {
+                   lines: { show: true },
+                   points: { show: true }
+               },
+               grid: { hoverable: true, clickable: true },
+               yaxis: { min: -1.6, max: 1.6 }
+		   });
+
+	// === Point hover in chart === //
+    var previousPoint = null;
+    $(".chart").bind("plothover", function (event, pos, item) {
+
+        if (item) {
+            if (previousPoint != item.dataIndex) {
+                previousPoint = item.dataIndex;
+
+                $('#tooltip').fadeOut(200,function(){
+					$(this).remove();
+				});
+                var x = item.datapoint[0].toFixed(2),
+					y = item.datapoint[1].toFixed(2);
+
+                unicorn.flot_tooltip(item.pageX, item.pageY,item.series.label + " of " + x + " = " + y);
+            }
+
+        } else {
+			$('#tooltip').fadeOut(200,function(){
+					$(this).remove();
+				});
+            previousPoint = null;
+        }
+    });
+});
+
+// Referred from unicorn-admin-template
+unicorn = {
+		// === Peity charts === //
+		peity: function(){
+			$.fn.peity.defaults.line = {
+				strokeWidth: 1,
+				delimeter: ",",
+				height: 24,
+				max: null,
+				min: 0,
+				width: 50
+			};
+			$.fn.peity.defaults.bar = {
+				delimeter: ",",
+				height: 24,
+				max: null,
+				min: 0,
+				width: 50
+			};
+			$(".peity_line_good span").peity("line", {
+				colour: "#B1FFA9",
+				strokeColour: "#459D1C"
+			});
+			$(".peity_line_bad span").peity("line", {
+				colour: "#FFC4C7",
+				strokeColour: "#BA1E20"
+			});
+			$(".peity_line_neutral span").peity("line", {
+				colour: "#CCCCCC",
+				strokeColour: "#757575"
+			});
+			$(".peity_bar_good span").peity("bar", {
+				colour: "#459D1C"
+			});
+			$(".peity_bar_bad span").peity("bar", {
+				colour: "#BA1E20"
+			});
+			$(".peity_bar_neutral span").peity("bar", {
+				colour: "#757575"
+			});
+		},
+
+		// === Tooltip for flot charts === //
+		flot_tooltip: function(x, y, contents) {
+
+			$('<div id="tooltip">' + contents + '</div>').css( {
+				top: y + 5,
+				left: x + 5
+			}).appendTo("body").fadeIn(200);
+		}
+}
+if (zk.ie && zk.ie < 8) {
+	jq.alert("Your browser is not supported, please use the latest one! (IE8+)");
+}
+]]></script>
+<script if='${execution.serverName == "www.zkoss.org" or execution.serverName == "www.potix.com"}'><![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+var gafn = function () {
+if (window._gat) {
+	gafn = null;
+	try {
+		var pageTracker = _gat._getTracker("UA-121377-3");
+		pageTracker._setDomainName("zkoss.org");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+
+	} catch (e) {
+	}
+} else
+	setTimeout(gafn, 1000);
+};
+gafn();
+]]></script>
+
+</zk>

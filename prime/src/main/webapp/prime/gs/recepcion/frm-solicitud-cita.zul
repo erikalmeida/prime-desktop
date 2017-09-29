@@ -1,0 +1,238 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-home">
+			Gestion de Agendas y Citas
+			<custom-attributes title="Go to Home" />
+		</a>
+		<a href="#">Solicitud de Citas</a>
+	</div>
+	<vlayout xmlns:n="native" style="padding: 20px">
+		<panel border="normal">
+			<caption>
+				<div style="margin-left: 40%;">
+					Solicitud de Cita
+				</div>
+			</caption>
+			<panelchildren>
+				<div class="row-fluid">
+					<grid>
+						<columns>
+							<column width="10%" />
+							<column width="30%" />
+							<column width="60%" />
+						</columns>
+						<rows>
+							<row zclass="form-group">
+								<cell></ceoll>
+								<label style="padding-left: 20px;">
+									Nombre:
+								</label>
+								<textbox id="txt_nombre"
+									zclass="form-control" width="" />
+									
+									
+							</row>
+							
+							
+							<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Apellido:
+								</label>
+								<textbox id="txt_apellido"
+									zclass="form-control" width="" />
+									
+									
+							</row>
+							<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Telefono:
+								</label>
+								<textbox id="txt_telefono"
+									type="text" zclass="form-control" width="" />
+							</row>
+							<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Correo:
+								</label>
+								<textbox id="txt_correo"
+									zclass="form-control" width="" />
+							</row>
+							
+
+						</rows>
+					</grid>
+					
+					<grid>
+					
+					
+					
+        <auxhead>
+            <auxheader colspan="5" label="Datos del vehiculo" />
+        </auxhead>
+        <columns>
+        	<column hflex="4">Elegir</column>
+            <column hflex="5">Marca</column>
+            <column hflex="6">Modelo</column>
+            <column hflex="3">Color</column>
+            <column hflex="4">Año</column>
+        </columns>
+        <rows sclass="narrow">
+            <row>
+             <checkbox />
+                <label value="Hyundai" />
+                <label value="Sonata" />
+                <label value="negro" />
+                 <label value="2017" />
+                <textbox />
+            </row>
+            <row>
+              <checkbox />
+                        <label value="Hyundai" />
+                <label value="Elantra" />
+                <label value="blanco" />
+                 <label value="2017" />
+                <textbox />
+            </row>
+            <row>
+            <checkbox />
+                       <label value="Chevrolet" />
+                <label value="Aveo" />
+                <label value="Azul" />
+                 <label value="2015" />
+                <textbox />
+            </row>
+            
+            <row>
+            <checkbox />
+                      <label value="Ford" />
+                <label value="Fiesta" />
+                <label value="rojo" />
+                 <label value="2016" />
+                <textbox />
+            </row>
+            
+        </rows>
+        
+       
+    </grid>
+    
+    <vbox>
+<hbox>
+Breve descripcion de la falla: <textbox tabbable="true" rows="50"/>
+</hbox>
+
+</vbox>
+    
+    
+  
+    
+    
+    
+  <!--   <grid model="${win$composer.carsModel}" mold="paging" pageSize="5">
+            <auxhead>
+                <auxheader />
+                <auxheader label="General Specification" align="center" colspan="3" />
+                <auxheader label="Tech Specification" align="center" colspan="2" />
+            </auxhead>
+            <columns>
+                <column width="40px" />
+                <column label="Modelo" align="center" sort="auto(model)" />
+                <column label="Marca" align="center" sort="auto(make)" />
+                <column label="Año" align="center" sort="auto(cost)"/>
+                <column	label="Color" align="center" />
+                 
+                
+                <column label="Transmission" align="center" sort="auto(autoTransmission)" />
+            </columns>
+            <template name="model">
+                <row>
+                    <detail>
+                        <hlayout sclass="detail">
+                            <image width="128px" style="margin: 8px"
+                                src="/widgets/getting_started/img/${each.picture}.png" />
+                            <vlayout>
+                                <hlayout sclass="detail-row">
+                                    <label value="Type :" sclass="title" />
+                                    <label value="${each.type}" />
+                                </hlayout>
+                                <hlayout sclass="detail-row">
+                                    <label value="Accessories :" sclass="title" />
+                                    <label value="${each.accessories}" />
+                                </hlayout>
+                                <hlayout sclass="detail-row">
+                                    <label value="Country :" sclass="title" />
+                                    <hlayout>
+                                        <label value="${each.country}" />
+                                        <image src="/widgets/getting_started/img/${each.country}.png" />
+                                    </hlayout>
+                                </hlayout>
+                                <hlayout sclass="detail-row">
+                                    <label value="Salesmen :" sclass="title" />
+                                    <label value="${each.salesmen}" />
+                                </hlayout>
+                            </vlayout>
+                        </hlayout>
+                    </detail>
+                    <label value="${each.model}" />
+                    <label value="${each.make}" />
+                    <label value="${each.cost}" />
+                    <label value="${each.engineDisplacement} c.c." />
+                    <hlayout>
+                        <image
+                            src="/widgets/getting_started/img/${each.autoTransmission ? 'at' : 'mt' }.png" />
+                        <label value="${each.autoTransmission ? 'AT' : 'MT'}" />
+                    </hlayout>
+                </row>
+            </template>
+        </grid>
+				-->
+					
+					
+					<grid>
+						<columns>
+							<column width="30%" />
+							<column width="10%" />
+							<column width="10%" />
+							<column width="10%" />
+							<column width="10%" />
+						</columns>
+						<rows>
+							<row zclass="form-group" class="text-center">
+								<cell></cell>
+								<button id="btn_registrar" type="button"
+									width="" class="btn btn-primary">
+									Registrar
+								</button>
+								
+								<button id="btn_actualizar" type="button"
+									width="" class="btn btn-primary">
+									Actualizar
+								</button>
+								<button id="btn_volver" type="button"
+									width="" class="btn btn-success">
+									Volver
+								</button>
+								<button id="btn_cancelar" type="button"
+									width="" class="btn btn-danger">
+									Cancelar
+								</button>
+								<cell></cell>
+							</row>
+						</rows>
+					</grid>
+				</div>
+				
+				
+				
+			</panelchildren>
+		</panel>
+	</vlayout>
+	<space></space>
+	
+</div>
+

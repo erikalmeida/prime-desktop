@@ -1,0 +1,231 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-setting-tools">
+			Servicios
+			<custom-attributes  />
+		</a>
+		<a href="#">Promocion</a>
+	</div>
+	
+	<vlayout xmlns:n="native" style="padding: 20px">
+		<panel border="normal">
+			<caption>
+				<div  visible="true" align="center">
+					Promociones
+				</div>
+			</caption>
+				
+			<panelchildren>
+				<div class="row-fluid">
+					
+					<grid>
+						<columns>
+							<column width="10%" />
+							<column width="30%" />
+							<column width="60%" />
+						</columns>
+						
+					</grid>
+					
+					
+					
+		<div id="divDatosPrincipales" visible="true" align="center">
+		<groupbox mold="3d" style="max-width: 100%;">
+			<caption label="Promocion" />
+				<div id="datospersonales" align="center" height="230px">	
+				<label value="Servicio:"/>
+				<textbox id="gg" value="Jhon"/>
+				<separator></separator>	
+				<label value="Tarifa:"/>
+				<textbox id="teggdyft" value=""/>	
+				<separator></separator>
+				<label value="Descuento"/>
+				<textbox id="texdjhkt" value=""/>	
+				<separator></separator>
+				<label value="Imagen:"/>
+				<textbox id="texkjkjkt" value=""/>	
+				<separator></separator>
+				<label value="Vigencia:"/>
+				<textbox id="texkjjt" value=""/>
+				<separator></separator>	
+				<label value="Descripcion:"/>
+				<textbox id="texhgdyft" value=""/>	
+				<separator></separator>
+				<label value="Titulo:"/>
+				<textbox id="texkghjhkt" value=""/>	
+				<separator></separator>
+				
+			</div>
+		</groupbox>
+	</div>
+	<separator></separator>
+					
+					
+					
+					
+						
+					
+					
+					
+					<div visible="true" align="center">
+		<div align="center" style="max-width: 100%;" >
+			<listbox id="listColores" checkmark="false" nonselectableTags="*" 
+					oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="5%"></listheader>
+					<listheader align="left" label="Marca" width="30%"><checkbox/></listheader>
+					<listheader align="left" label="Modelo" width="30%"><checkbox/></listheader>
+					<listheader align="left" label="Anno" width="30%"><checkbox/></listheader>
+				</listhead>
+				
+					
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<checkbox  tooltiptext="Consultar"/>
+ 						</listcell>
+						
+						
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="Cambio de Aceite"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="20.000bsf"/>
+						
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="20.000bsf"/>
+						
+						</listcell>
+						
+					</listitem>
+					
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<checkbox  tooltiptext="Consultar"/>
+ 						</listcell>
+					
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="Entonacion Mayor"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="15.000bsf"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="20.000bsf"/>
+						
+						</listcell>
+						
+					</listitem>
+					
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<checkbox  tooltiptext="Consultar"/>
+ 						</listcell>
+						
+						
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="Reparacion de Meseta"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="10.0000bsf"/>
+						
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="20.000bsf"/>
+						
+						</listcell>
+						
+					</listitem>
+					<listitem>
+						<listcell style="text-align:left;">
+ 						<checkbox  tooltiptext="Consultar"/>
+ 						</listcell>
+						
+						
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="Reparacion de alternador"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="25.000bsf"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="20.000bsf"/>
+						
+						</listcell>
+						
+						
+					</listitem>
+			
+			</listbox>
+		</div>
+	</div>
+    
+    
+    
+    
+  
+    
+    
+  
+					
+					
+					<grid>
+						<columns>
+							<column width="30%" />
+							<column width="10%" />
+							<column width="10%" />
+							<column width="10%" />
+							<column width="10%" />
+						</columns>
+						<rows>
+							<row zclass="form-group" class="text-center">
+								<cell></cell>
+								<button id="btn_registrar" type="button"
+									width="" class="btn btn-primary">
+									Registrar
+								</button>
+								
+								<button id="btn_actualizar" type="button"
+									width="" class="btn btn-primary">
+									Actualizar
+								</button>
+								<button id="btn_volver" type="button"
+									width="" class="btn btn-success">
+									Volver
+								</button>
+								<button id="btn_cancelar" type="button"
+									width="" class="btn btn-danger">
+									Cancelar
+								</button>
+								<cell></cell>
+							</row>
+						</rows>
+					</grid>
+				</div>
+				
+				
+				
+			</panelchildren>
+		</panel>
+	</vlayout>
+	<space></space>
+	
+	
+</div>
+

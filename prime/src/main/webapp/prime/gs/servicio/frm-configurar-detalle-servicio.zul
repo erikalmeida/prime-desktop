@@ -1,0 +1,192 @@
+<div xmlns:zk="zk" xmlns:z="zul"  apply="ucla.si.controlador.gs.servicio.ControladorConfigurarServicioFalla">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-home">
+			Configurar Servicios
+			<custom-attributes title="Go to Home" />
+		</a>
+		<a href="#">Falla</a>
+	</div>
+	
+
+	
+    <style>   
+        .nav_toolbar .z-toolbarbutton-content i { font-size: 20px;}
+        .nav_tabs .z-tabpanel { padding: 0; border-bottom: 0 none;}
+        .nav_tabs .z-tabpanels .z-toolbarbutton-content { padding: 4px;}
+        .nav_category { cursor:pointer; }
+        .nav_text { color: #696569; font-size : 24px; font-weight: bold;}
+    </style>
+    <tabbox width="100%" sclass="nav_tabs">
+        <tabs id="tabs">
+            <tab label="Fallas" onSelect="updateCategory(self.label)" id="navFalla" />
+            <tab label="Vehiculos" onSelect="updateCategory(self.label)" id="navVehiculo"/>
+            <tab label="Etapas" onSelect="updateCategory(self.label)" id="navEtapa"/>
+            <tab label="Tecnologias" onSelect="updateCategory(self.label)"  id="navTecnologia"/>
+            <tab label="Herramientas" onSelect="updateCategory(self.label)" id="navHerramienta"/>
+        </tabs>
+        
+        <tabpanels>
+            
+            
+           
+        </tabpanels>
+    </tabbox>
+    <separator height="0px"></separator>
+    <zscript><![CDATA[
+        void updateCategory(String category) {
+            current_category.setValue(category);
+            current_subpage.setValue("Index");
+        }
+        void updateSubPage(String sub) {
+            current_subpage.setValue(sub);
+        }
+    ]]></zscript>
+ 
+    <vlayout xmlns:n="native" style="padding: 20px">
+		<panel border="normal">
+			<caption style="margin-left: 35px;">
+			<div ><label id="current_category" sclass="nav_text nav_category" onClick='updateSubPage("Index")'>Configurar Servicios</label>
+        <label sclass="nav_text">-</label>
+        <label id="current_subpage" sclass="nav_text">Index</label></div>
+				
+      
+			</caption>
+			<panelchildren>
+				
+				<div align="center" >
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Fallas" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<textbox id="txtBuscar" placeholder="Introduzca su búsqueda" width="60%"  maxlength="50"/>
+							<combobutton label="Acciones">
+								<menupopup >
+									<menuitem iconSclass="z-icon-search" id="mItemBuscar" label="Buscar" sclass="mItem"  />
+									<menuitem iconSclass="z-icon-pencil-square-o" id="mItemIncluir" label="Incluir" sclass="mItem"  visible="true"/>  	                    	                    						                  
+									<menuitem iconSclass="z-icon-pencil-square-o" id="mItemAsignacion" label="Asignación" sclass="mItem"  visible="true"/>
+								</menupopup>
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+	   		<space />	
+		</groupbox>
+	</div>
+	
+	<space/>
+	<div align="center">
+		<div align="center" style="max-width: 950px;" >
+			<listbox id="listFallas" checkmark="true" nonselectableTags="*" 
+					oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					
+					<listheader align="left" label="Elija la Fallwa" width="20%"></listheader>
+					<listheader align="left" label="Descripcion" width="20%"><checkbox/></listheader>
+					
+					
+				</listhead>
+				<template name="model">
+				
+			
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<checkbox></checkbox>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${each.descripcion}"/>
+							<label if="${each.estatus=='Activo'}" value= "${each.descripcion}"/>
+						</listcell>
+						
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+
+			</panelchildren>
+		</panel>
+	</vlayout>
+	
+	
+	<vlayout xmlns:n="native" style="padding: 20px">
+		<panel border="normal">
+			<caption style="margin-left: 35px;">
+			<div ><label id="current_category" sclass="nav_text nav_category" onClick='updateSubPage("Index")'>Configurar Servicios</label>
+        <label sclass="nav_text">-</label>
+        <label id="current_subpage" sclass="nav_text">Index</label></div>
+				
+      
+			</caption>
+			<panelchildren>
+				
+				<div align="center" >
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Fallas" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<textbox id="txtBuscar" placeholder="Introduzca su búsqueda" width="60%"  maxlength="50"/>
+							<combobutton label="Acciones">
+								<menupopup >
+									<menuitem iconSclass="z-icon-search" id="mItemBuscar" label="Buscar" sclass="mItem"  />
+									<menuitem iconSclass="z-icon-pencil-square-o" id="mItemIncluir" label="Incluir" sclass="mItem"  visible="true"/>  	                    	                    						                  
+									<menuitem iconSclass="z-icon-pencil-square-o" id="mItemAsignacion" label="Asignación" sclass="mItem"  visible="true"/>
+								</menupopup>
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+	   		<space />	
+		</groupbox>
+	</div>
+	
+	<space/>
+	<div align="center">
+		<div align="center" style="max-width: 950px;" >
+			<listbox id="listFallas" checkmark="true" nonselectableTags="*" 
+					oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					
+					<listheader align="left" label="Elija la Fallwa" width="20%"></listheader>
+					<listheader align="left" label="Descripcion" width="20%"><checkbox/></listheader>
+					
+					
+				</listhead>
+				<template name="model">
+				
+			
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<checkbox></checkbox>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${each.descripcion}"/>
+							<label if="${each.estatus=='Activo'}" value= "${each.descripcion}"/>
+						</listcell>
+						
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+
+			</panelchildren>
+		</panel>
+	</vlayout>
+
+	
+</div>

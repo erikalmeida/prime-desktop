@@ -1,0 +1,48 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gc.web.ControladorConfiguracionWeb">
+	<div sclass="breadcrumb">
+		<a href="#"  tooltiptext="Configuración Portal Web"
+			iconSclass="icon icon-white icon-laptop">
+			Configuración Portal Web
+			
+		</a>
+		<a href="#">Actualizar Contenido</a>
+	</div>
+
+	<style>
+		.nav_toolbar .z-toolbarbutton-content i { font-size: 20px;}
+		.nav_tabs .z-tabpanel { padding: 0; border-bottom: 0 none;}
+		.nav_tabs .z-tabpanels .z-toolbarbutton-content { padding: 4px;}
+		.nav_category { cursor:pointer; } .nav_text { color: #696569;
+		font-size : 24px; font-weight: bold;}
+	</style>
+	<tabbox width="100%" sclass="nav_tabs">
+		<tabs id="tabs">
+			<tab label="Sistema" id="sistema"/>
+			<tab label="Slider" id="slider" />
+			<tab label="Promociones" id="promocionesWeb"/>
+			<tab label="Servicios" id="serviciosWeb"/>
+			<tab label="Noticias" id="noticias" />
+			<tab label="Preguntas Frecuentes" id="preguntasFrecuentes"/>
+			<tab label="Redes Sociales" id="sociales"/>
+
+
+		</tabs>
+
+	</tabbox>
+	<separator height="0px"></separator>
+	<zscript><![CDATA[
+	void updateCategory(String category) {
+		current_category.setValue(category);
+		current_subpage.setValue("Index");
+	}
+	void updateSubPage(String sub) {
+		current_subpage.setValue(sub);
+	}
+]]></zscript>
+
+
+	<div id="appWeb"></div>
+
+
+</div>

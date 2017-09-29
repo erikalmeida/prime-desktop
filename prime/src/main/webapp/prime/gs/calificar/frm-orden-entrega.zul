@@ -1,0 +1,100 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gs.servicio.ControladorOrdenEntregaCalificar">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-date">
+			Servicio
+			<custom-attributes title="Atender Solicitud" />
+		</a>
+		<a href="#">Calificar Servicio</a>
+	</div>
+	<space/>
+	<div align="center" >
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Calificar Servicios" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<datebox id="txtBuscar" placeholder="Introduzca su búsqueda" width="40%"  maxlength="50"/>
+							<combobutton label="Acciones">
+								
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+	   		<space />	
+		</groupbox>
+	</div>
+	<space/>
+	<div align="center">
+		<div align="center" style="max-width: 950px;" >
+			<listbox id="listOrdenEntrega" checkmark="false" nonselectableTags="*" 
+					oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="8%"></listheader>
+					<listheader align="left" label="Fecha de la Orden" width="20%"></listheader>
+					<listheader align="left" label="Nombre del Cliente" width="15%"></listheader>
+					<listheader align="left" label="Marca" width="10%" ></listheader>
+					<listheader align="left" label="Modelo" width="10%"></listheader>
+					<listheader align="left" label="Servicio" width="15%"></listheader>
+					<listheader align="left" label="Promocion" width="15%"></listheader>
+					<listheader align="left" label="Garantia" width="15%"></listheader>
+					<listheader align="left" label="Estatus" width="10%"></listheader>
+					
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell style="text-align:left;">
+ 							
+ 							<button class="btn btn-primary btn-xs consultar" width="15%"   iconSclass="z-icon-clipboard" tooltiptext="Detalle"/>
+ 							
+						</listcell>
+						<listcell style="text-align:left;">
+								
+							<label if="${each.estatus=='Inactivo'}"  style="color: red" value="${each.fechaCreacion}"/>
+							<label if="${each.estatus=='Activo'}"  value="${each.fechaCreacion}" style="color: black"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${each.prueba.ordenServicio.presupuesto.cita.vehiculo.usuario.persona.nombre} ${each.prueba.ordenServicio.presupuesto.cita.vehiculo.usuario.persona.apellido}"/>
+							<label if="${each.estatus=='Activo'}" value="${each.prueba.ordenServicio.presupuesto.cita.vehiculo.usuario.persona.nombre} ${each.prueba.ordenServicio.presupuesto.cita.vehiculo.usuario.persona.apellido}" style="color: black"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${each.prueba.ordenServicio.presupuesto.cita.vehiculo.marca.nombre}"/>
+							<label if="${each.estatus=='Activo'}" value="${each.prueba.ordenServicio.presupuesto.cita.vehiculo.marca.nombre}" style="color: black"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" value="${each.prueba.ordenServicio.presupuesto.cita.vehiculo.modelo.nombre}" style="color: red" />
+							<label if="${each.estatus=='Activo'}" value="${each.prueba.ordenServicio.presupuesto.cita.vehiculo.modelo.nombre}" style="color: black"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" value="${each.prueba.ordenServicio.presupuesto.cita.servicio.titulo}" style="color: red" />
+							<label if="${each.estatus=='Activo'}" value="${each.prueba.ordenServicio.presupuesto.cita.servicio.titulo}" style="color: black"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" value="${each.prueba.ordenServicio.presupuesto.cita.promocion.titulo}" style="color: red" />
+							<label if="${each.estatus=='Activo'}" value="${each.prueba.ordenServicio.presupuesto.cita.promocion.titulo}" style="color: black"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" value="${each.garantia.descripcion}" style="color: red" />
+							<label if="${each.estatus=='Activo'}" value="${each.garantia.descripcion}" style="color: black"/>
+						</listcell>
+						
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" value="${each.estatus}" style="color: red" />
+							<label if="${each.estatus=='Activo'}" value="${each.estatus}" style="color: black"/>
+						</listcell>
+					</listitem>
+				</template>
+				
+					
+				
+			
+			</listbox>
+		</div>
+	</div>
+</div>

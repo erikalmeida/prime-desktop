@@ -1,0 +1,83 @@
+<?page title="Ingresar | Prime" ?>
+<?link rel="shortcut icon" href="/static/ico/prime-teal-16.png"?>
+<?component name="button" extends="button" width="44px" height="44px"?>
+<?link rel="stylesheet" type="text/css"	href="/static/bootstrap/css/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="/static/css/index.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/user-nav.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/sidebar.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/search.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/content-header.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/styles.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/login.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/modal.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/load.css" ?>
+<?link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" ?>
+
+<zk xmlns:n="native">
+<html>
+	<![CDATA[ 
+<meta charset="UTF-8">
+	]]>
+</html>
+	<div>
+		<popup id="btntip" sclass="btn-tip" style="margin-top: 10px">
+			<label id="msg" value="Manage Files"></label>
+			<attribute name="onOpen">
+		if (event.isOpen()) {
+			msg.setValue(event.getReference().getAttribute("title").toString());
+		}
+		</attribute>
+	</popup>
+				
+	<div sclass="header">
+		<n:h1> 
+			<a>Prime </a>
+		</n:h1>
+	</div>
+	
+	<div sclass="panel-login" style="margin-top: 75px;width: 525px;height: 400px; border-radius: 10px 10px 10px 10px;">
+		<div sclass="content-header" style="border-radius: 10px 10px 10px 10px;" 
+		apply="ucla.si.controlador.app.ControladorSesion" id="login">
+			<n:h1 align="center">Iniciar Sesión</n:h1>
+			<grid>
+	            <columns>
+	            	<column width="100px"/>
+	                <column width="150px"/>
+	                <column />
+	            </columns>
+	            <rows>
+	                <row style="padding-top: 20px;">
+	                	<cell></cell>
+	                    <label style="padding-left: 20px;">Correo:</label>
+	                    <cell>
+	                        <textbox id="txt_correo" width="150px" value="andy@prime.com" tabindex="1"/>
+	                    </cell>
+	                </row>
+	                <row>
+	                	<cell></cell>
+	                    <label style="padding-left: 20px;">Contraseña:</label>
+	                    <textbox type="password" id="txt_contrasenna" width="150px"  value="123" tabindex="2"/>
+	                </row>
+	                <row>
+	                	<cell></cell>
+	                	<button id="btn_entrar" type="button" width="120px">Entrar</button>
+						<span>
+							<a id="recuperar_contrasenna">¿Recuperar contraseña?</a>
+						</span>
+	                </row>
+	            </rows>
+	        </grid>
+	        <space></space>
+	        <space></space>
+		</div>
+	</div>
+</div>
+<script src="/static/js/excanvas.min.js" type="" if="${zk.ie lt 9}" ></script>	
+<script src="/static/js/jquery.flot.min.js"></script>
+<script src="/static/js/jquery.peity.min.js"></script>
+
+</zk>

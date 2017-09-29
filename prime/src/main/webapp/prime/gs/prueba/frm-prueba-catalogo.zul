@@ -1,0 +1,67 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gs.servicio.prueba.ControladorServicioPruebaCatalogo">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-date">
+			Servicios
+			<custom-attributes title="Recepcion de Vehiculo" />
+		</a>
+		<a href="#">Revisar Servicio Ejecutado</a>
+	</div>
+	<space/>
+	<div align="center" >
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Revisar Servicios" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<datebox id="txtBuscar" placeholder="Introduzca su búsqueda" width="40%"  maxlength="50"/>
+							<combobutton label="Acciones">
+								
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+	   		<space />	
+		</groupbox>
+	</div>
+	<space/>
+	<div align="center">
+		<div align="center" style="max-width: 950px;" >
+			<listbox id="listOrdenesServicio"  nonselectableTags="*" oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="18%"></listheader>
+					<listheader align="left" label="Descripcion" width="15%"><checkbox/></listheader>
+					<listheader align="left" label="Fecha" width="20%"><checkbox/></listheader>
+					<listheader align="left" label="Estado" width="15%" ><checkbox/></listheader>
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<button class="btn btn-primary btn-xs consultar" iconSclass="z-icon-clipboard" tooltiptext="Aplicar Prueba" label="Aplicar Prueba"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="${each.descripcion}"/>
+													
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="${each.fechaCreacion}"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="${each.estado}"/>
+							
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+</div>

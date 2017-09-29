@@ -1,0 +1,276 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Usuarios</a>
+	</div>
+	<space/>
+
+		<div>
+		
+			<div id="divDatosPrincipales" visible="true" align="center" >
+				<groupbox mold="3d" style="max-width: 950px;">
+					<caption label="Datos Generales" />
+					<grid style="border:none;">
+						<columns>
+							<column width="20%" />
+							<column width="30%" />
+							<column width="20%" />
+							<column width="30%" />
+						</columns>
+						<rows>
+						<row id="rowEstatus"
+								style="background:#FFFFFF;border:none;" visible="false">
+								<div visible="true">
+									<label value="Estatus" />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<combobox id="cmbEstatus" readonly="true" placeholder="Seleccione" width="82.5%"
+										tabindex="1">
+										<template name="model">
+											<comboitem style="text-align:left;" label="${each.valor}" value="${each }"/>
+										</template>
+									</combobox>
+									<label id="ermsgEstatus" style="color: red"/>
+								</vlayout>
+						</row>
+						<row
+								style="background:#FFFFFF;border:none;">
+								<div visible="true">
+									<label value="Tipo de ramo" />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<combobox id="cmbTipoRamo" readonly="true" placeholder="Seleccione" tabindex="2" width="82.5%">
+										<template name="model">
+											<comboitem style="text-align:left;" label="${each.valor}" value="${each }"/>
+										</template>
+									</combobox>
+									<label id="ermsgTipoRamo" style="color: red"/>
+								</vlayout>
+								<div visible="true">
+									<label value="Código" />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<textbox id="txtCodigo" width="80%" tabindex="3" maxlength="30" />
+									<label id="ermsgCodigo" style="color: red"/>
+								</vlayout>
+						</row>
+						<row
+								style="background:#FFFFFF;border:none;">
+								<div visible="true">
+									<label value="Nombre" />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<textbox id="txtNombre" width="80%"  tabindex="4" maxlength="25"/>
+									<label id="ermsgNombre" style="color: red"/>
+								</vlayout>
+								<div visible="true">
+									<label value="Abreviatura" />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<textbox id="txtAbreviatura" width="80%" tabindex="5" maxlength="5" />
+									<label id="ermsgAbreviatura" style="color: red"/>
+								</vlayout>
+						</row>
+						<row
+								style="background:#FFFFFF;border:none; vertical-align: top;" spans="1,3">
+								<div visible="true">
+									<label value="Descripción"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<textbox id="txtDescripcion" width="92.7%" height="50px" multiline = "true" tabindex="6" maxlength="255" 
+									style="resize:vertical;max-height:100px; min-height:50px;" />
+									<label id="ermsgDescripcion" style="color: red"/>
+								</vlayout>
+						</row>
+						</rows>
+					</grid>
+				</groupbox>
+			</div>
+			<space />
+			<div id="divSuscripcion" visible="true" align="center" >
+				<groupbox mold="3d" style="max-width: 950px">
+					<caption label="Configuración de Suscripción" />
+						<grid style="border:none;">
+								<columns>
+									<column width="20%" />
+									<column width="30%" />
+									<column width="20%" />
+									<column width="30%" />				
+								</columns>
+								<rows>
+									<row style="background:#FFFFFF;border:none;">
+										 <div visible="true">
+											<label value="Incluye beneficiarios" />
+											<label value=" *" style="color: red"/>
+										 </div>
+										 <vlayout>
+											<combobox id="cmbIncluyeBeneficiarios" readonly="true" tabindex="7" placeholder="Seleccione" width="82.5%">
+												<template name="model">
+													<comboitem style="text-align:left;" label="${each.valor}" value="${each }"/>
+												</template>
+											</combobox>
+											<label id="ermsgIncluyeBeneficiarios" style="color: red"/>
+										</vlayout>
+										<div visible="true">
+											<label value="Múltiples asegurados" />
+											<label value=" *" style="color: red" />
+										</div>
+										<vlayout>
+											<combobox id="cmbMultiplesAsegurados" readonly="true" tabindex="8" placeholder="Seleccione" width="82.5%">
+												<template name="model">
+													<comboitem style="text-align:left;" label="${each.valor}" value="${each }"/>
+												</template>
+											</combobox>
+											<label id="ermsgMultiplesAsegurados" style="color: red"/>
+										</vlayout>
+									</row>
+									<row style="background:#FFFFFF;border:none;">
+										<div visible="true">
+											<label value="¿Requiere recaudos en suscripción?" />
+											<label value=" *" style="color: red" />
+										</div>
+										<vlayout>
+											<combobox id="cmbRequisitosSuscripcion" readonly="true" tabindex="9" placeholder="Seleccione" width="82.5%">
+												<template name="model">
+													<comboitem style="text-align:left;" label="${each.valor}" value="${each }"/>
+												</template>
+											</combobox>
+											<label id="ermsgRequisitos" style="color: red"/>
+										</vlayout>
+										<div visible="true">
+											<label value="Porcentaje de siniestralidad en renovación (%)" />
+											<label value=" *" style="color: red" />
+										</div>
+										<div>
+											<doublespinner id="dspnPorcRenovacion" step="0.10" format="###.##" tabindex="10"  
+															 width="82.5%" placeholder="0,00" /> <!-- maxlength="4" -->
+											
+											<vlayout>
+												<label id="ermsgPorcRenovacion" style="color: red"/>
+											</vlayout>											
+										</div>
+									</row>
+								</rows>
+							</grid>
+					</groupbox>
+					</div>
+					<space />				
+					<div id="divReclamo" visible="true" align="center" >
+					<groupbox mold="3d" style="max-width: 950px" >
+						<caption label="Configuración de Servicios" />
+						<grid style="border:none;">
+							<columns>
+								<column width="20%" />
+								<column width="30%" />
+								<column width="20%" />
+								<column width="30%" />
+							</columns>
+							<rows>
+								<row style="background:#FFFFFF;border:none;">
+								  <div visible="true">
+									<label value="Plazo de declaración de servicios (días)" />
+									<label value=" *" style="color: red"/>
+								</div>
+								<div>									
+									<spinner id="spnPlazoDeclaracionServ" width="82.5%" 
+											tabindex="11" placeholder="0" maxlength="3" />
+									<vlayout>
+									<label id="ermsgPlazoDeclaracion" style="color: red"/>
+									</vlayout>									
+								</div>
+								 <div visible="true">
+									<label value="Plazo de entrega de recaudos para servicios (días)" />
+									<label value=" *" style="color: red" />
+								 </div>
+								 <div>								 	
+										<spinner id="spnPlazoRecaudos" constraint="no negative, min 0, no empty" tabindex="12"
+											width="82.5%" placeholder="0" maxlength="3"/>
+									<vlayout>
+										<label id="ermsgPlazoRecaudos" style="color: red"/>
+									</vlayout>									
+								 </div>
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+				</div>
+			<space />	
+			<div id="divObservaciones" align="center" >
+			<groupbox mold="3d" style="max-width: 950px;" id="grpbObservaciones"  >
+			<caption  label="Observaciones" />
+				<grid style="border:none;">
+						<columns>
+							<column width="20%" />
+							<column width="80%" />
+						</columns>
+						<rows>
+							<row style="background:#FFFFFF;border:none; vertical-align: top;">
+							<label value="Observación" />							  
+			    			<textbox id="txtObservaciones" width ="92.7%" tabindex="13" multiline="true" maxlength="255" 
+			    			style="resize:vertical;max-height:100px; min-height:50px;" />
+							</row>
+						</rows>
+				</grid>
+			<listbox id="listbObservaciones" width="100%" mold="paging" pageSize="30" pagingPosition="top" oddRowSclass="none" 
+			    	emptyMessage="No se han agregado observaciones" visible ="false">
+		       		  <listhead>
+			            <listheader align="center" label="Descripción" width="50%" />
+			            <listheader align="center" label="Creación" width="25%"  />	
+			            <listheader align="center" label="Usuario" width="25%"  />		            
+		       		 </listhead>
+						<template name="model">						
+		                <listitem>
+	                 		<listcell label="${each.descripcion}" style="text-align:left;"/> 
+	                		<listcell label="${$ControladorRamo.formatoFechaDetalle(each.fechaCreacion)}" style="text-align:left;" />
+	                		<listcell label="${each.nombreCreador}" style="text-align:left;" /> 
+		                </listitem>
+					</template>		        
+			    	</listbox>
+			</groupbox>
+    		</div>	
+			<space />
+			<div id="divCampoObligatorio" align="center"
+				visible="true">
+				<hbox align="left" width="950px">
+					<label value="(*) Campos mandatorios." style="color: red" />
+				</hbox>
+			</div>
+			<space />
+			<div id="divMenuItem" align="center" height="50px">	
+				<combobutton label="Acciones" width="7%" height="60%">
+					<menupopup>
+	                    <menuitem iconSclass="z-icon-check-circle-o" id="mItemAceptar"   label="Aceptar"  sclass="mItem"  />
+	                    <menuitem iconSclass="z-icon-power-off"  id="mItemCancelar"  label="Cancelar" sclass="mItem"  />
+					</menupopup>
+				</combobutton>	
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+		</div>
+</div>

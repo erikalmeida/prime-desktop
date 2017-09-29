@@ -1,0 +1,213 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gc.espacio.ControladorAsignarEspacioCatalogo">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Planificación
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Asignar Espacio</a>
+	</div>
+	<space />
+	<div align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Catalogo de Espacios" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row
+						style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<textbox id="txtBuscar"
+								placeholder="Introduzca su búsqueda" width="60%" maxlength="50" />
+							<combobutton label="Acciones">
+								<menupopup>
+									<menuitem iconSclass="z-icon-search"
+										id="mItemBuscar" label="Buscar" sclass="mItem" />
+									<menuitem
+										iconSclass="z-icon-pencil-square-o" id="mItemIncluir"
+										label="Incluir" sclass="mItem" visible="true" />
+								</menupopup>
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+			<space />
+		</groupbox>
+	</div>
+	<space />
+	<div align="center">
+		<div align="center" style="max-width: 950px;">
+			<listbox id="listEspacios" checkmark="true"
+				nonselectableTags="*" oddRowSclass="none"
+				emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+
+					<listheader align="left" label="Espacio Fisico"
+						width="20% " height="50px"
+						style="font-size:18px;text-align:center;">
+					</listheader>
+					<listheader align="left" label="Lunes" width="20% "
+						height="50px" style="font-size:18px;text-align:center;">
+					</listheader>
+					<listheader align="left" label="Martes" width="20%"
+						height="50px" style="font-size:18px;text-align:center;">
+					</listheader>
+					<listheader align="left" label="Miercoles"
+						width="20%" height="50px"
+						style="font-size:18px;text-align:center;">
+					</listheader>
+					<listheader align="left" label="Jueves" width="20%"
+						height="50px" style="font-size:18px;text-align:center;">
+					</listheader>
+					<listheader align="left" label="Viernes" width="20%"
+						height="50px" style="font-size:18px;text-align:center;">
+					</listheader>
+					<listheader align="left" label="Estatus"
+						width="20% " height="50px"
+						style="font-size:18px;text-align:center;">
+					</listheader>
+				</listhead>
+				<template name="model">
+					<listitem>
+
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								value="${each.identificacion}" style="color: red" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.identificacion}" style="color: black" />
+						</listcell>
+						<listcell if="${each.descripcion=='Configurado'}"
+							style="text-align:center;background: #d9534f;"  > <space></space><!--  <button class="btn btn-primary btn-xs consultar" width="15%"   iconSclass="z-icon-clipboard" tooltiptext="Detalle"/>-->
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space> <checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						
+						<listcell if="${each.descripcion=='Por Asignar'}" 
+							style="text-align:center;background: #00BCD4;"  >
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space> <checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						<listcell if="${each.descripcion=='Configurado'}"
+							style="text-align:center;background: #d9534f;"  >
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space> <checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						
+						<listcell if="${each.descripcion=='Por Asignar'}"
+							style="text-align:center;background: #00BCD4;"  >
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space> <checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						<listcell if="${each.descripcion=='Configurado'}"
+							style="text-align:center;background: #d9534f;"  >
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space> <checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						
+						<listcell if="${each.descripcion=='Por Asignar'}"
+							style="text-align:center;background: #00BCD4;"  >
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space> <checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						<listcell if="${each.descripcion=='Configurado'}"
+							style="text-align:center;background: #d9534f;"  >
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space> <checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						
+						<listcell if="${each.descripcion=='Por Asignar'}"
+							style="text-align:center;background: #00BCD4;"  >
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space> <checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						<listcell if="${each.descripcion=='Configurado'}"
+							style="text-align:center;background: #d9534f;"  >
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space><checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						
+						<listcell if="${each.descripcion=='Por Asignar'}"
+							style="text-align:center;background: #00BCD4;"  >
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: white;background: #d9534f;font-size:18px;" value="Configurado"
+								 />
+								 <label if="${each.descripcion=='Por Asignar'}" style="color: white;background:#00BCD4;font-size:18px;"
+						value="Por Asignar" /><space></space> <checkbox></checkbox>
+							<space></space>
+							
+						</listcell>
+						
+
+						<listcell style="text-align:left;">
+							<label if="${each.descripcion=='Por Asignar'}"
+								style="color: green" value="Por Asignar" />
+							<label if="${each.descripcion=='Configurado'}"
+								style="color: red" value="Configurado" />
+						</listcell>
+
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+
+	<div id="divMenuItem" align="center" height="50px">
+		<hlayout style="padding: 20px">
+			<button sclass="btn-primary btn-mini" zclass="btn"
+				label="Asignar" id="btnAsignar" />
+			
+			<button sclass="btn-danger btn-mini" zclass="btn"
+				label="Cancelar" id="btnCancelar" />
+		</hlayout>
+	</div>
+</div>

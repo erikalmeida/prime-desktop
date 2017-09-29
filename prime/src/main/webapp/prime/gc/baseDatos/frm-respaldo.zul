@@ -1,0 +1,87 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gc.baseDatos.ControladorRespaldo">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Respaldo</a>
+	</div>
+	<space/>
+	<div align="center" >
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Respaldo" />
+			<grid style="border:none;">
+				<columns>
+					<column width="20%" />
+					<column width="20%" />
+					<column width="30%" />
+					<column width="30%" />
+				</columns>
+				<rows>
+					<row style="background:#FFFFFF;border:none;padding-top:20px;">
+						<label/>
+						<label>Tipo de Respaldo</label>
+						<vlayout>
+							<combobox placeholder="Seleccione" id="cmbRespaldo">
+								<comboitem label="Total" />
+								<comboitem label="Parcial" />
+							</combobox>
+						</vlayout>
+						<hbox>
+							<button sclass="btn-primary btn-mini" zclass="btn"
+								label="Respaldar" id="btnRespaldar"/>
+							<button sclass="btn-danger btn-mini" zclass="btn"
+								label="Descargar" id="btnDescargar"/>
+						</hbox>
+					</row>
+				</rows>
+			</grid>
+			<space />
+	   			<div align="center">
+					<div align="center" style="max-width: 950px;" >
+						<hbox>
+							<listbox id="listTablas" checkmark="true" nonselectableTags="*" 
+									oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda" height="400px;"
+									onDrop="move(event.dragged)" droppable="true">
+								<listhead>
+									<listheader align="left" label="Tablas Prime"></listheader>
+								</listhead>
+								<template name="model">
+									<listitem draggable="true"  droppable="true" onDrop="move(event.dragged)">
+										<listcell style="text-align:left;" label="${each}" iconSclass="icon icon-database-gear"/>
+									</listitem>
+								</template>
+							</listbox>
+							<listbox id="listTablasRespaldo" checkmark="true" nonselectableTags="*" 
+									oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda" height="400px;"
+									onDrop="move(event.dragged)" droppable="true">
+								<listhead>
+									<listheader align="left" label="Tablas a Respalda"></listheader>
+								</listhead>
+								<template name="model">
+									<listitem draggable="true"  droppable="true" onDrop="move(event.dragged)">
+										<listcell style="text-align:left;" label="${each}" iconSclass="icon icon-database-gear"/>
+									</listitem>
+								</template>
+							</listbox>
+						</hbox>
+						<zscript>
+							void move(Component dragged) {
+								if (self instanceof Listitem) {
+									if (dragged.getParent().getId().equals("right")) {
+										self.parent.insertBefore(dragged, self.getNextSibling());
+									} else {
+										self.parent.insertBefore(dragged, self.getNextSibling());
+									}
+								} else {
+									self.appendChild(dragged);
+								}
+							}
+						</zscript>
+					</div>
+				</div>
+		</groupbox>
+	</div>
+	<space/>
+</div>

@@ -1,0 +1,77 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gc.web.preguntaFrecuente.ControladorConfiguracionIncluirPreguntaFrecuente">
+
+	<space />
+	<div>
+		<div id="divDatosPrincipales" visible="true" align="center">
+			<groupbox mold="3d" style="max-width: 950px;">
+				<caption label="Incluir Pregunta Frecuente" id="tituloNoticia" />
+				<grid style="border:none;">
+					<columns>
+						<column width="20%" />
+						<column width="80%" />
+
+					</columns>
+					<rows>
+
+						<row>
+							<div visible="true">
+								<label value="Pregunta" />
+								<label value=" *" style="color: red" />
+							</div>
+
+							<div align="center" width="92.7%">
+								<div align="center"
+									style="max-width: 950px;">
+									<ckeditor id="ckPregunta"
+										onChange="txtPregunta.value = self.value">
+										<attribute name="value">
+										</attribute>
+									</ckeditor>
+									<textbox id="txtPregunta"
+										rows="6" width="100%" onChange="ckPregunta.value = self.value" />
+								</div>
+							</div>
+						</row>
+						
+						<row>
+							<div visible="true">
+								<label value="Respuesta" />
+								<label value=" *" style="color: red" />
+							</div>
+
+							<div align="center" width="92.7%">
+								<div align="center"
+									style="max-width: 950px;">
+									<ckeditor id="ckRespuesta"
+										onChange="txtRespuesta.value = self.value">
+										<attribute name="value">
+										</attribute>
+									</ckeditor>
+									<textbox id="txtRespuesta"
+										rows="6" width="100%" onChange="ckRespuesta.value = self.value" />
+								</div>
+							</div>
+						</row>
+						
+					
+								
+						</rows>
+					</grid>
+				</groupbox>
+			</div>
+			<space />
+			<div id="divMenuItem" align="center" height="50px">	
+				<hlayout style="padding: 20px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Aceptar" id="btnAceptar"/>
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="Cancelar" id="btnCancelar"/>
+				</hlayout>	
+			</div>
+			
+			<div>
+				<space />
+			</div>
+		</div>
+</div>

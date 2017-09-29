@@ -1,0 +1,198 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gs.servicio.ordenEntrega.ControladorGenerarOrdenEntrega">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-date">
+			Servicios
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Generar Orden Entrega</a>
+		<a href="#">(Detalle)</a>
+	</div>
+	<space/>
+		<div>
+		<div id="divDatosPrincipales" visible="true" align="left" style="margin-left:5%;" width="80%">
+				<tabbox >
+			        <tabs>
+			            <tab label="Cliente" />
+			            <tab label="Vehiculo" />
+			            <tab label="Orden Servicio" />
+			            <tab label="Registrar orden Entrega" />
+			        </tabs>
+			        <tabpanels>
+			            <tabpanel>
+			            	<div visible="true" width="30%" >
+								<label value="Foto"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteFoto" width="50%" height="auto"/>
+							</div>
+			            	<div visible="true" width="30%" >
+								<label value="Nombre"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteNombre" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Apellido"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteApellido" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Direccion"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteDireccion" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Correo"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtClienteCorreo" width="50%" height="auto"/>
+							</div>
+			            </tabpanel>
+			            <tabpanel>
+			            	<div visible="true" width="30%" >
+								<label value="Placa"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtAutoPlaca" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Marca"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtAutoMarca" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Año"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control"  id="txtAutoAnno" width="50%" height="auto"/>
+							</div>
+							<div visible="true" width="30%" >
+								<label value="Modelo"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control" id="txtAutoModelo" width="50%" height="auto"/>
+							</div>
+			            </tabpanel>
+			            <tabpanel>
+			            	<div visible="true" width="30%" >
+								<label value="Fecha"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control" id="txtOrdenServicioFecha" width="50%" height="auto"/>
+							</div>
+							<space/>
+							<div visible="true" width="30%" >
+								<label value="Fecha"  />
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control" id="txtOrdenServicioEstado" width="50%" height="auto"/>
+							</div>
+							<space/>
+			            	<div visible="true">
+								<label value="Descripción"  />
+							</div>
+							<vlayout>
+								<textbox zclass="form-control"  id="txtOrdenServicioDescripcion" width="90%" height="auto" multiline = "true" tabindex="6" maxlength="255" 
+								style="resize:vertical;max-height:100px; min-height:50px;" />
+							</vlayout>
+							<space/>
+							<div visible="true" width="100%" style="text-align:center">
+								<label value="Detalle de la Prueba"  style="font-size:24px; "/>
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control" id="txtDescripcionPrueba" width="50%" height="auto"/>
+							</div>
+							<space/>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control" id="txtFechaPrueba" width="50%" height="auto"/>
+							</div>
+							<space/>
+							<div visible="true" width="100%" style="text-align:center">
+								<label value="Servicio Aplicado"  style="font-size:24px; "/>
+							</div>
+							<div visible="true" width="60%" >
+								<textbox zclass="form-control" id="txtServicio" width="50%" height="auto"/>
+							</div>
+			            </tabpanel>
+			            <tabpanel>
+			            	<div visible="true" width="100%" style="text-align:center">
+								<label value="Garantia del Servicio"  style="font-size:24px; "/>
+							</div>
+							<div visible="true">
+								<label value="Tipo de Garancia"  />
+								<label value=" *" style="color: red" />
+							</div>
+							<vlayout>
+								<combobox id="cmbTipoGarantia" value="Seleccione" width="200px" readonly="true">
+						        	<template name="model">
+						            	<comboitem label="${each.nombre}"/>
+						            </template>
+						         </combobox>
+						     </vlayout>
+							<space/>
+							<div visible="true" width="30%" >
+								<label value="Tiempo Vigencia (dias)"  />
+							</div>
+							<div visible="true" width="60%" >
+								<intbox zclass="form-control" id="intBoxTiempoVigencia" constraint="no negative: no puede ser negativo" width="50%" height="auto"/>
+							</div>
+							<div visible="true">
+								<label value="Comentario"  />
+							</div>
+							<vlayout>
+								<textbox zclass="form-control"  id="txtDescripcionGarantia" width="90%" height="auto" multiline = "true" tabindex="6" maxlength="255" 
+								style="resize:vertical;max-height:100px; min-height:50px;" />
+							</vlayout>
+							<space/>
+							<space/>
+							<space/>
+							<space/>
+							<div visible="true" width="100%" style="text-align:center;clear :both">
+								<label value="Orden de Entrega"  style="font-size:24px; "/>
+							</div>
+			            	<div visible="true">
+								<label value="Descripción"  />
+							</div>
+							<vlayout>
+								<textbox zclass="form-control"  id="txtDescripcion" width="90%" height="auto" multiline = "true" tabindex="6" maxlength="255" 
+								style="resize:vertical;max-height:100px; min-height:50px;" />
+							</vlayout>
+							<space/>
+							<div align="center" height="50px" >	
+							<hlayout style="padding: 20px">
+								<button sclass="btn-primary btn-mini" zclass="btn"
+									label="Registrar" id="btnAceptar"/>
+							</hlayout>
+							</div>
+							<space/>
+			            </tabpanel>
+			        </tabpanels>
+			    </tabbox>
+			</div>
+			<div align="center" height="50px" >	
+				<hlayout style="padding: 0px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Volver" id="btnVolver"/>
+				</hlayout>	
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+		</div>
+</div>
+		
+
+		

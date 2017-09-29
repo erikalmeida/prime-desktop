@@ -1,0 +1,46 @@
+==> Para ingresar a base de datos Postgres desde consola 
+
+1. Instalar sudo apt-get install postgres-xc-client
+U=Usuario
+h=Host
+d=nombre de la bd
+2. psql -U postgres -W -h localhost -d prime_prueba
+
+¡Enhorabuena! Coloca el comando sql de quieras.
+
+Cerrar conexión 	\q
+Cambiar de Base de datos 	\c __base_datos__
+Listar Bases de datos 	\l
+Ver Definiciones 	\d __table__
+Listar Schemas 	\dn
+Listar funciones 	\df
+Listar Vistas 	\dv
+Ver código SLQ de la función 	\df+ __function
+Pretty-format 	\
+Para salir de un listado q
+
+Nota: Cualquier duda "help"
+http://apuntes-snicoper.readthedocs.io/es/latest/programacion/postgresql/comandos_consola_psql.html
+
+== > Para hacer un Dump completo de la base de datos en formato sql
+
+pg_dump -U postgres -W -h localhost prime_prueba > prime_prueba.sql
+
+== > Para hacer un Dump sin data de la base de datos en formato sql
+
+pg_dump -U postgres -W -h -a localhost basename > prime_prueba.sql
+
+== > Para hacer un Backup completo de la base de datos
+
+pg_dump -i -h localhost -p 5432 -U postgres -F c -b -v -f /ruta/prime_prueba.backup prime_pruebae
+
+== > Para hacer un Dump de solo la estructura de la base de datos en formato sql
+
+pg_dump -U  postgres -s -d prime_prueba > prime_prueba.sql
+
+== > Para restaurar BD dado un respaldo en formato sql
+
+psql --host localhost -U postgres --port 5432 --file /ruta/prime_prueba.sql prime_prueba
+
+
+

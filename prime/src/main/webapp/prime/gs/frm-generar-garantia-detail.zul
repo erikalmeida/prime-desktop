@@ -1,0 +1,81 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.app.ControladorMenu">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-date">
+			Servicios
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Generar Garantia</a>
+		<a href="#">(Detalle)</a>
+	</div>
+	<space/>
+		<div>
+			<div id="divDatosPrincipales" visible="true" align="center" >
+				<groupbox mold="3d" style="max-width: 950px;">
+					<caption label="(Detalle de la Garantia)" />
+					<grid style="border:none;">
+						<columns>
+							<column width="20%" />
+							<column width="30%" />
+							<column width="20%" />
+							<column width="30%" />
+						</columns>
+						<rows>
+						<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Codigo:
+								</label>
+								<textbox id="txt_codigo"
+									zclass="form-control" width="" value="0001" />
+
+
+							</row>
+							<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Fecha:
+								</label>
+								<textbox id="txt_fecha"
+									zclass="form-control" width="" value="22-10-2017" />
+
+
+							</row>
+							<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Descripcion:
+								</label>
+								
+									<textbox id="txtDescripcion" width="200%" height="50px"  tabindex="6" maxlength="255" 
+									style="resize:vertical;max-height:100px; min-height:50px;" />
+									<label id="ermsgDescripcion" style="color: red"/>
+							
+							</row>	
+						</rows>
+					</grid>
+				</groupbox>
+			</div>
+			<space />
+			<div id="divMenuItem" align="center" height="50px">	
+				<hlayout style="padding: 20px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Aceptar" id="btnAceptar"/>
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="Cancelar" id="btnCancelar"/>
+				</hlayout>	
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+		</div>
+</div>

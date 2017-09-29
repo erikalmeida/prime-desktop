@@ -1,0 +1,66 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gc.maestrico.marcaTecnologia.ControladorMarcaTecnologiaCatalogo">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Marca de la Tecnologia</a>
+	</div>
+	<space/>
+	<div align="center" >
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Marca de la Tecnologia" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<textbox id="txtBuscar" placeholder="Introduzca su búsqueda" width="60%"  maxlength="50"/>
+							<combobutton label="Acciones">
+								<menupopup >
+									<menuitem iconSclass="z-icon-search" id="mItemBuscar" label="Buscar" sclass="mItem"  />
+									<menuitem iconSclass="z-icon-pencil-square-o" id="mItemIncluir" label="Incluir" sclass="mItem"  visible="true"/>  	                    	                    						                  
+								</menupopup>
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+	   		<space />	
+		</groupbox>
+	</div>
+	<space/>
+	<div align="center">
+		<div align="center" style="max-width: 950px;" >
+			<listbox id="listMarcaTecnologias" checkmark="true" nonselectableTags="*" 
+					oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="14%"></listheader>
+					<listheader align="left" label="Descripción" width="38%"></listheader>
+					<listheader align="left" label="Estatus" width="10%" ></listheader>
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<button class="btn btn-primary btn-xs editar" iconSclass="z-icon-pencil" tooltiptext="Editar"/>
+ 							<button class="btn btn-primary btn-xs consultar" iconSclass="z-icon-clipboard" tooltiptext="Consultar"/>
+ 							<button class="btn btn-primary btn-xs eliminar" iconSclass="z-icon-sign-out" tooltiptext="Eliminar"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${each.descripcion}"/>
+							<label if="${each.estatus=='Activo'}" value="${each.descripcion}"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" value="${each.estatus}" style="color: red" />
+							<label if="${each.estatus=='Activo'}" value="${each.estatus}" style="color: black"/>
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,90 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gs.servicio.ControladorGenerarOrdenServicio">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-date">
+			Orden de Servicio
+			<custom-attributes title="Atender Solicitud" />
+		</a>
+		<a href="#">Generar Orden de Servicio</a>
+	</div>
+	<space/>
+	<div align="center" >
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Generar Orden de Servicio" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<datebox id="txtBuscar" placeholder="Introduzca su búsqueda" width="40%"  maxlength="50"/>
+							<combobutton label="Acciones">
+								
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+	   		<space />	
+		</groupbox>
+	</div>
+	<space/>
+	<div align="center">
+		<div align="center" style="max-width: 950px;" >
+			<listbox id="listPresupuestos" checkmark="false" nonselectableTags="*" 
+					oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="8%"></listheader>
+					<listheader align="left" label="Fecha del Presupuesto" width="20%"></listheader>
+					<listheader align="left" label="Nombre del Cliente" width="15%"></listheader>
+					<listheader align="left" label="Marca" width="15%" ></listheader>
+					<listheader align="left" label="Modelo" width="15%"></listheader>
+					<!--<listheader align="left" label="Servicio" width="15%"></listheader>
+					<listheader align="left" label="Fallas" width="15%"></listheader> -->
+					<listheader align="left" label="Estatus" width="10%"></listheader>
+					
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell style="text-align:left;">
+ 							
+ 							<button class="btn btn-primary btn-xs consultar" width="15%"   iconSclass="z-icon-clipboard" tooltiptext="Detalle"/>
+ 							
+						</listcell>
+						<listcell style="text-align:left;">
+								
+							<label if="${each.estatus=='Inactivo'}"  style="color: red" value="${each.fechaCreacion}"/>
+							<label if="${each.estatus=='Activo'}"  value="${each.fechaCreacion}" style="color: black"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${$ControladorGenerarOrdenServicio.nombreUsuario(each.id)}"/>
+							<label if="${each.estatus=='Activo'}" style="color: black" value="${$ControladorGenerarOrdenServicio.nombreUsuario(each.id)}"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" style="color: red" value="${$ControladorGenerarOrdenServicio.nombreMarca(each.id)}"/>
+							<label if="${each.estatus=='Activo'}" value="${$ControladorGenerarOrdenServicio.nombreMarca(each.id)}" style="color: black"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" value="${$ControladorGenerarOrdenServicio.nombreModelo(each.id)}" style="color: red" />
+							<label if="${each.estatus=='Activo'}" value="${$ControladorGenerarOrdenServicio.nombreModelo(each.id)}" style="color: black"/>
+						</listcell>
+					<!-- 	<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" value="${each.servicio.titulo}" style="color: red" />
+							<label if="${each.estatus=='Activo'}" value="${each.servicio.titulo}" style="color: black"/>
+						</listcell>  -->
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}" value="${each.estatus}" style="color: red" />
+							<label if="${each.estatus=='Activo'}" value="${each.estatus}" style="color: black"/>
+						</listcell>
+					</listitem>
+				</template>
+				</listbox>
+				
+			<space></space>
+			<space></space>
+				
+		</div>
+	</div>
+</div>

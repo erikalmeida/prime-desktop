@@ -1,0 +1,19 @@
+/*Cargando*/
+.z-loading, .z-apply-loading {
+	border: 1px solid white;
+	padding: 3px;
+	background: white;
+	position: absolute;
+	cursor: wait;
+}
+
+.z-loading-indicator, .z-apply-loading-indicator {
+	color: #00796B;
+	border: 1px solid white;
+	background: white;
+}
+
+.z-apply-loading-indicator {
+	font-weight: normal;
+	padding: 5px;
+}

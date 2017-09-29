@@ -1,0 +1,123 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.app.ControladorMenu">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-date">
+			Servicios
+			<custom-attributes title="Atender Solicitud" />
+		</a>
+		<a href="#">Diagnosticar</a>
+	</div>
+	<space/>
+	<div align="center" >
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Diagnostico de Vehiculo" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<datebox id="txtBuscar" placeholder="Introduzca su búsqueda" width="40%"  maxlength="50"/>
+							<combobutton label="Acciones">
+								
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+	   		<space />	
+		</groupbox>
+	</div>
+	<space/>
+	<div align="center">
+		<div align="center" style="max-width: 950px;" >
+			<listbox id="listColores" checkmark="false" nonselectableTags="*" 
+					oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="18%"></listheader>
+					<listheader align="left" label="Fecha" width="15%"><checkbox/></listheader>
+					<listheader align="left" label="Nombre del Cliente" width="20%"><checkbox/></listheader>
+					<listheader align="left" label="Marca" width="15%" ><checkbox/></listheader>
+					<listheader align="left" label="Modelo" width="15%"><checkbox/></listheader>
+					<listheader align="left" label="Servicio" width="20%"><checkbox/></listheader>
+					<listheader align="left" label="Promocion" width="20%"><checkbox/></listheader>
+				</listhead>
+				
+					
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<button class="btn btn-primary btn-xs editar" iconSclass="z-icon-pencil" tooltiptext="Consultar"/>
+ 							<button class="btn btn-primary btn-xs consultar" id="Aceptarr" iconSclass="z-icon-clipboard" tooltiptext="Aceptar"/>
+ 							<button class="btn btn-primary btn-xs eliminar" iconSclass="z-icon-sign-out" tooltiptext="Rechazar"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="22-02-2017"/>
+													
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="Rosa Perez"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="Toyota"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							
+							<label  style="color: black" value="Corolla"/>
+						
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" />
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="Cambio de aceite"/>
+							
+						</listcell>
+					</listitem>
+					
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<button class="btn btn-primary btn-xs editar" iconSclass="z-icon-pencil" tooltiptext="Consultar"/>
+ 							<button class="btn btn-primary btn-xs consultar" iconSclass="z-icon-clipboard" tooltiptext="Aceptar"/>
+ 							<button class="btn btn-primary btn-xs eliminar" iconSclass="z-icon-sign-out" tooltiptext="Rechazar"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="22-02-2017"/>
+							
+														
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="Antonio Pacheco"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="Hyundai"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="Sonata"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" value="Inyeccion"/>
+							
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  style="color: black" />
+							
+						</listcell>
+					</listitem>
+					
+					
+					
+			
+			</listbox>
+		</div>
+	</div>
+</div>

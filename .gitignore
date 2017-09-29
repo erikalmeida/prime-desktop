@@ -1,0 +1,13 @@
+# Eclipse IDE: Archivos de configuracion
+#prime/.classpath
+#prime/.project
+#prime/.settings/
+
+# Maven: Archivos compilados
+prime/target/
+
+#archivo de persistencia
+
+#prime/src/main/resources/META-INF/persistence.xml
+
+#prime/src/main/webapp/media/images/*

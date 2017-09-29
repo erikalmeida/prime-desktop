@@ -1,0 +1,364 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gs.servicio.ControladorGenerarPresupuesto">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-home">
+			Servicios
+			<custom-attributes title="Go to Home" />
+		</a>
+		<a href="#">Realizar Diagnostico y Presupuesto</a>
+	</div>
+
+
+
+	<style>
+		.nav_toolbar .z-toolbarbutton-content i { font-size: 20px;}
+		.nav_tabs .z-tabpanel { padding: 0; border-bottom: 0 none;}
+		.nav_tabs .z-tabpanels .z-toolbarbutton-content { padding: 4px;}
+		.nav_category { cursor:pointer; } .nav_text { color: #696569;
+		font-size : 24px; font-weight: bold;}
+	</style>
+
+	<separator height="0px"></separator>
+	<zscript><![CDATA[
+	void updateCategory(String category) {
+		current_category.setValue(category);
+		current_subpage.setValue("Index");
+	}
+	void updateSubPage(String sub) {
+		current_subpage.setValue(sub);
+	}
+]]></zscript>
+
+	<vlayout xmlns:n="native" style="padding: 20px">
+
+	</vlayout>
+
+
+
+
+	<tabbox width="100%" sclass="nav_tabs">
+
+		<tabs>
+			<tab>Falla</tab>
+			<tab>Servicio</tab>
+			<tab>Repuesto</tab>
+			
+		</tabs>
+		<tabpanels>
+
+		
+
+
+
+			<tabpanel>
+
+				<div align="center">
+					<groupbox mold="3d" style="max-width: 950px;">
+						<caption label="Diagnostico Fallas encontradas" />
+						<grid style="border:none;">
+							<columns>
+								<column width="100%" />
+							</columns>
+							<rows>
+								<row
+									style="background:#FFFFFF;border:none;padding-top:20px;">
+									<div align="center">
+										<textbox
+											id="txtBuscarFallas"
+											placeholder="Introduzca su búsqueda" width="60%"
+											maxlength="50" />
+										<combobutton label="Acciones">
+											<menupopup>
+												<menuitem
+													iconSclass="z-icon-search" id="mItemBuscarFalla"
+													label="Buscar" sclass="mItem" />
+												<menuitem
+													iconSclass="z-icon-pencil-square-o"
+													id="mItemIncluirFalla" label="Incluir" sclass="mItem"
+													visible="true" />
+												<menuitem
+													iconSclass="z-icon-pencil-square-o"
+													id="mItemAsignacionFalla" label="Asignación"
+													sclass="mItem" visible="true" />
+											</menupopup>
+										</combobutton>
+									</div>
+								</row>
+							</rows>
+						</grid>
+						<space />
+						<space />
+					</groupbox>
+				</div>
+
+				<div align="center">
+					<div align="center" style="max-width: 950px;">
+						<listbox id="listFallas"
+							nonselectableTags="*" oddRowSclass="none"
+							emptyMessage="No se han encontrado resultados para esta búsqueda">
+							<listhead>
+
+
+								<listheader align="left"
+									label="Seleccione la(s) Falla(s)" width="56%">
+
+								</listheader>
+
+								<listheader align="left"
+									label="Descripción" width="56%">
+									<checkbox />
+								</listheader>
+
+
+							</listhead>
+							<template name="model">
+
+
+								<listitem>
+
+									<listcell></listcell>
+
+									<listcell
+										style="text-align:left;">
+										<label
+											if="${each.estatus=='Inactivo'}" style="color: red"
+											value="${each.descripcion}" />
+										<label
+											if="${each.estatus=='Activo'}" value="${each.descripcion}" />
+									</listcell>
+
+								</listitem>
+
+							</template>
+						</listbox>
+						<space></space>
+						<space></space>
+						<div id="divMenuFalla" align="center"
+							height="50px">
+							<hlayout style="padding: 20px">
+								<button sclass="btn-primary btn-mini"
+									zclass="btn" label="Añadir" id="btnAnnadirFalla" />
+								<button sclass="btn-danger btn-mini"
+									zclass="btn" label="Volver" id="btnVolverFalla" />
+
+							</hlayout>
+						</div>
+						<space></space>
+						<space></space>
+					</div>
+				</div>
+			</tabpanel>
+
+			<tabpanel>
+
+				<div align="center">
+					<groupbox mold="3d" style="max-width: 950px;">
+						<caption label="Servicio" />
+						<grid style="border:none;">
+							<columns>
+								<column width="100%" />
+							</columns>
+							<rows>
+								<row
+									style="background:#FFFFFF;border:none;padding-top:20px;">
+									<div align="center">
+										<textbox
+											id="txtBuscarServicio" placeholder="Introduzca su búsqueda"
+											width="60%" maxlength="50" />
+										<combobutton label="Acciones">
+											<menupopup>
+												<menuitem
+													iconSclass="z-icon-search" id="mItemBuscarServicio"
+													label="Buscar" sclass="mItem" />
+												<menuitem
+													iconSclass="z-icon-pencil-square-o"
+													id="mItemIncluirServicio" label="Incluir" sclass="mItem"
+													visible="true" />
+												<menuitem
+													iconSclass="z-icon-pencil-square-o"
+													id="mItemAsignacionServicio" label="Asignación"
+													sclass="mItem" visible="true" />
+											</menupopup>
+										</combobutton>
+									</div>
+								</row>
+							</rows>
+						</grid>
+						<space />
+						<space />
+					</groupbox>
+				</div>
+
+				<div align="center">
+					<div align="center" style="max-width: 950px;">
+						<listbox id="listServicios"
+							nonselectableTags="*" oddRowSclass="none"
+							emptyMessage="No se han encontrado resultados para esta búsqueda">
+							<listhead>
+
+								<listheader align="left"
+									label="Seleccione la(s) Servicio(s)" width="56%">
+
+								</listheader>
+
+
+								<listheader align="left"
+									label="Descripción" width="56%">
+									<checkbox />
+								</listheader>
+
+
+							</listhead>
+							<template name="model">
+
+
+								<listitem>
+
+									<listcell></listcell>
+
+									<listcell
+										style="text-align:left;">
+										<label
+											if="${each.estatus=='Inactivo'}" style="color: red"
+											value="${each.descripcion}" />
+										<label
+											if="${each.estatus=='Activo'}" value="${each.descripcion}" />
+									</listcell>
+
+								</listitem>
+
+							</template>
+						</listbox>
+						<space></space>
+						<space></space>
+						<div id="divMenuServicio" align="center"
+							height="50px">
+							<hlayout style="padding: 20px">
+								<button sclass="btn-primary btn-mini"
+									zclass="btn" label="Añadir" id="btnAnnadirServicio" />
+								<button sclass="btn-danger btn-mini"
+									zclass="btn" label="Volver" id="btnVolverServicio" />
+
+							</hlayout>
+						</div>
+						<space></space>
+						<space></space>
+					</div>
+				</div>
+			</tabpanel>
+
+			<tabpanel>
+
+			 	<div align="center">
+					<groupbox mold="3d" style="max-width: 950px;">
+						<caption label="Repuesto" />
+						<grid style="border:none;">
+							<columns>
+								<column width="100%" />
+							</columns>
+							<rows>
+								<row
+									style="background:#FFFFFF;border:none;padding-top:20px;">
+									<div align="center">
+										<textbox id="txtBuscarRepuesto"
+											placeholder="Introduzca su búsqueda" width="60%"
+											maxlength="50" />
+										<combobutton label="Acciones">
+											<menupopup>
+												<menuitem
+													iconSclass="z-icon-search" id="mItemBuscarRepuesto"
+													label="Buscar" sclass="mItem" />
+												<menuitem
+													iconSclass="z-icon-pencil-square-o" id="mItemIncluirRepuesto"
+													label="Incluir" sclass="mItem" visible="true" />
+												<menuitem
+													iconSclass="z-icon-pencil-square-o"
+													id="mItemAsignacionRepuesto" label="Asignación" sclass="mItem"
+													visible="true" />
+											</menupopup>
+										</combobutton>
+									</div>
+								</row>
+							</rows>
+						</grid>
+						<space />
+						<space />
+					</groupbox>
+				</div>
+
+				<div align="center">
+					<div align="center" style="max-width: 950px;">
+						<listbox id="listTipoRepuestos" nonselectableTags="*"
+							oddRowSclass="none"
+							emptyMessage="No se han encontrado resultados para esta búsqueda">
+							<listhead>
+
+								<listheader align="left"
+									label="Seleccione el(los) Repuesto(s)" width="56%">
+
+								</listheader>
+
+
+								<listheader align="left"
+									label="Descripción" width="56%">
+									<checkbox />
+								</listheader>
+
+
+							</listhead>
+							<template name="model">
+
+
+								<listitem>
+
+									<listcell></listcell>
+
+									<listcell
+										style="text-align:left;">
+										<label
+											if="${each.estatus=='Inactivo'}" style="color: red"
+											value="${each.descripcion}" />
+										<label
+											if="${each.estatus=='Activo'}" value="${each.descripcion}" />
+									</listcell>
+
+								</listitem>
+
+
+							</template>
+						</listbox>
+						<space></space>
+						<space></space>
+						<div id="divMenuRepuesto" align="center"
+							height="50px">
+							<hlayout style="padding: 20px">
+								<button sclass="btn-primary btn-mini"
+									zclass="btn" label="Añadir" id="btnAnnadirRepuesto" />
+									<button sclass="btn-danger btn-mini"
+									zclass="btn" label="Generar Presupuesto" id="btnPresupuesto" />
+								<button sclass="btn-danger btn-mini"
+									zclass="btn" label="Volver" id="btnVolverRepuesto" />
+
+							</hlayout>
+						</div>
+						<space></space>
+						<space></space>
+					</div>
+				</div>
+			</tabpanel>
+			
+			
+			
+
+		</tabpanels>
+
+	</tabbox>
+
+
+
+
+
+
+
+</div>

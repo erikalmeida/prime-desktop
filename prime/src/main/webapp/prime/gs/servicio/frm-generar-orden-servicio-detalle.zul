@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gs.servicio.ControladorGenerarOrdenServicio">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center" iconSclass="icon-setting-tools">
+			Servicios
+			<custom-attributes />
+		</a>
+		<a href="#">
+			Orden de Servicio
+		</a>
+	</div>
+	<vlayout xmlns:n="native" style="padding: 20px">
+		<panel border="normal">
+			<caption>
+				<div visible="true" align="center">
+					Orden de Servicio
+				</div>
+			</caption>
+			<panelchildren>
+				<div class="row-fluid">
+					<grid>
+						<columns>
+							<column width="10%" />
+							<column width="30%" />
+							<column width="60%" />
+						</columns>
+						<rows>
+							<!-- <row zclass="form-group">
+								<cell />
+								<label style="padding-left: 20px;">
+									Código:
+								</label>
+								<textbox id="txtCodigo" zclass="form-control" width="" />
+							</row> -->
+							<row zclass="form-group">
+								<cell />
+								<label style="padding-left: 20px;">
+									Nombre:
+								</label>
+								<textbox id="txtNombre" zclass="form-control" width=""
+									/>
+							</row>
+							<row zclass="form-group">
+								<cell />
+								<label style="padding-left: 20px;">
+									Apellido:
+								</label>
+								<textbox id="txtApellido" zclass="form-control" width=""
+									/>
+							</row>
+							<row zclass="form-group">
+								<cell />
+								<label style="padding-left: 20px;">
+									Teléfono:
+								</label>
+								<textbox id="txtTelefono" type="text" zclass="form-control"
+									width="" />
+							</row>
+							<row zclass="form-group">
+								<cell />
+								<label style="padding-left: 20px;">
+									Correo:
+								</label>
+								<textbox id="txtCorreo" zclass="form-control" width="" />
+							</row>
+						</rows>
+					</grid>
+					<div id="divDatosPrincipales" visible="true" align="center">
+						<groupbox mold="3d" style="max-width: 100%;">
+							<caption label="Datos del vehiculo" />
+							<div id="datospersonales" align="center" height="50px">
+								<hlayout style="padding: 20px">
+									<space />
+									<label value="Placa:" style="font-size:18px;" />
+									<label id="lblPlaca" style="font-size:18px;" />
+									<space />
+									<label value="Marca:" style="font-size:18px;" />
+									<label id="lblMarca" style="font-size:18px;" />
+									<space />
+									<label value="Modelo:" style="font-size:18px;" />
+									<label id="lblModelo" style="font-size:18px;" />
+									<space />
+									<label value="Año:" style="font-size:18px;" />
+									<label id="lblAnno" style="font-size:18px;" />
+								</hlayout>
+							</div>
+						</groupbox>
+					</div>
+					<div align="center">
+					<div align="center" style="">
+					<listbox id="listFallaPresupuesto" nonselectableTags="*" emptyMessage="No se han encontrado resultados para esta búsqueda">
+						<listhead>
+							<listheader align="left" label="Fallas presentadas" width="200px">
+							</listheader>
+								</listhead>
+								<template
+									name="model">
+									<listitem if="${each.estatus=='Activo'}">
+										<listcell style="text-align:left;">
+											<label value="${each.falla.descripcion}" />
+										</listcell>
+									</listitem>
+								</template>
+					</listbox>
+					<div align="center">
+						<div align="center" style="">
+							<listbox id="listServicio" nonselectableTags="*" emptyMessage="No se han encontrado resultados para esta búsqueda">
+						<listhead>
+							<listheader align="left" label="Servicios a ejecutar" width="200px">
+							</listheader>
+								</listhead>
+								<template
+									name="model">
+									<listitem if="${each.estatus=='Activo'}">
+										<listcell style="text-align:left;">
+											<label value="${each.titulo}" />
+										</listcell>
+									</listitem>
+								</template>
+					       </listbox>
+							<div id="" visible="true" align="center">
+								<groupbox mold="3d" style="">
+									<caption label="Asignación de Recursos" />
+									<grid style="border:none;">
+										<columns>
+											<column width="20%" />
+											<column width="30%" />
+											<column width="20%" /><column width="30%" />
+											
+										</columns>
+										<rows>
+											<row style="background:#FFFFFF;border:none; vertical-align: top;"
+												spans="1,3">
+												<div visible="true">
+													<label value="Descripcion" />
+												</div>
+												<vlayout>
+													<textbox id="txtDescripcion" type="text" zclass="form-control"/>
+												</vlayout>
+											</row>
+											<row style="background:#FFFFFF;border:none; vertical-align: top;"
+												spans="1,3">
+												<div visible="true">
+													<label value="Mecanicos" />
+													<label value=" *" style="color: red" />
+												</div>
+												<vlayout>
+													<listbox id="listMecanicos" nonselectableTags="*"
+														emptyMessage="No se han encontrado resultados para esta búsqueda">
+														<listhead>
+															<listheader
+																align="left" label="Seleccione uno o más Mecanicos"
+																width="400px">
+															</listheader>
+														</listhead>
+														<template
+															name="model">
+															<listitem if="${each.estatus=='Activo'}">
+																<listcell style="text-align:left;">
+																	<label value="${each.persona.nombre} ${each.persona.apellido}" />
+																</listcell>
+															</listitem>
+														</template>
+													</listbox>
+												</vlayout>
+											</row>
+										</rows>
+									</grid>
+								</groupbox>
+							</div>
+							<div id="divMenuEtapa" align="center" height="50px">
+								<hlayout style="padding: 20px">
+									<button sclass="btn-primary btn-mini" zclass="btn"
+										label="Generar Orden de Servicio" id="btnGenerarOrdenServicio" />
+									<button sclass="btn-danger btn-mini" zclass="btn" label="Volver"
+										id="btnVolverEtapa" />
+								</hlayout>
+							</div>
+							<space />
+							<space />
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+			</panelchildren>
+		</panel>
+	</vlayout>
+	<space />
+</div>

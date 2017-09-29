@@ -1,0 +1,1554 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gc.grupo.ControladorGrupoAsignacion">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Grupos</a>
+		<a href="#">Asignación</a>
+	</div>
+	<space/>
+	<div>
+		<div id="divDatosPrincipales" visible="true" align="center" >
+			<groupbox mold="3d" style="max-width: 950px;">
+				<caption label="Asignación de Grupos" />
+				<grid style="border:none;">
+					<columns>
+						<column width="10%" />
+						<column width="90%" />
+					</columns>
+					<rows>
+						<row style="background:#FFFFFF;border:none;">
+							<div visible="true">
+								<label value="Grupo" />
+								<label value=" *"
+									style="color: red" />
+							</div>
+							<vlayout>
+								<combobox id="cmbGrupos"  value="Seleccione" width="200px" readonly="true">
+									 <template name="model">
+					                 	<comboitem label="${each.nombre}"/>
+					                 </template>
+								</combobox>
+								<label style="color: red"/>
+							</vlayout>
+						</row>
+					</rows>
+				</grid>
+				<tree id="tree" multiple="false" checkmark="false">
+					<treecols>
+						<treecol/>
+						<treecol label="Incluir" width="12%" style="text-align: center;"/>
+			            <treecol label="Consultar" width="12%" style="text-align: center;"/>
+			            <treecol label="Editar" width="12%" style="text-align: center;"/>
+						<treecol label="Eliminar" width="12%" style="text-align: center;"/>
+					</treecols>
+					<treechildren>
+						<treeitem>
+							<treerow id="nivel1InicioTree">
+								<treecell label="Inicio"/>
+								<treecell style="text-align: center; background: #d9534f;">
+									<checkbox tooltiptext="INCLUIR"/>
+								</treecell>
+								<treecell style="text-align: center; background: #d9534f;">
+									<checkbox tooltiptext="CONSULTAR"/>
+								</treecell>
+								<treecell style="text-align: center; background: #d9534f;">
+									<checkbox tooltiptext="EDITAR"/>
+								</treecell>
+								<treecell style="text-align: center; background: #d9534f;">
+									<checkbox tooltiptext="ELIMINAR"/>
+								</treecell>
+							</treerow>
+						</treeitem>
+						<treeitem>
+							<treerow id="nivel1AdministracionRecursosTree">
+								<treecell label="Administración de Recursos"/>
+							</treerow>
+							<treechildren>
+								<treeitem>
+									<treerow id="nivel2GeneralTree">
+										<treecell label="General"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3ClienteTree">
+												<treecell label="Opciones de Cliente"/>
+											</treerow>
+											<treechildren>
+												<treeitem>
+													<treerow id="nivel4OcupacionTree">
+														<treecell label="Ocupación"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4ProfesionTree">
+														<treecell label="Profesión"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4PasatiempoTree">
+														<treecell label="Pasatiempo"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4CiudadTree">
+														<treecell label="Ciudad"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4EstadoTree">
+														<treecell label="Estado"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4ClienteTree">
+														<treecell label="Cliente"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4MotivoTree">
+														<treecell label="Habilidad"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4DeporteTree">
+														<treecell label="Deporte"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4ViajeTree">
+														<treecell label="Viaje"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+											</treechildren>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3VehiculoTree">
+												<treecell label="Opciones de Vehículo"/>
+											</treerow>
+											<treechildren>
+												<treeitem>
+													<treerow id="nivel4MarcaTree">
+														<treecell label="Marca"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4ModeloTree">
+														<treecell label="Modelo"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4UsoTree">
+														<treecell label="Uso"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4ColorTree">
+														<treecell label="Color"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4TipoMotorTree">
+														<treecell label="Tipo de Motor"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4MotorTree">
+														<treecell label="Motor"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4RectificacionTree">
+														<treecell label="Rectificación"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4TipoClaseTree">
+														<treecell label="Tipo de Clase"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4ClaseTree">
+														<treecell label="Clase"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4MarcaRepuestoTree">
+														<treecell label="Marca de Repuesto"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4TipoCajaTree">
+														<treecell label="Tipo de Caja"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4CajaTree">
+														<treecell label="Caja"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4TipoAceiteTree">
+														<treecell label="Tipo de Aceite"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4GrosorAceiteTree">
+														<treecell label="Grosor de Aceite"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4AceiteTree">
+														<treecell label="Aceite"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4TipoCombustibleTree">
+														<treecell label="Aceite"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4CombustibleTree">
+														<treecell label="Aceite"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4TipoRefrigeranteTree">
+														<treecell label="Refrigerante"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4RefrigeranteTree">
+														<treecell label="Refrigerante"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4TipoTecnologiaTree">
+														<treecell label="Tipo de Tecnología"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4MarcaTecnologiaTree">
+														<treecell label="Marca de Tecnología"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4TipoRepuestoTree">
+														<treecell label="Tipo de Repuesto"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+												<treeitem>
+													<treerow id="nivel4VehiculoTree">
+														<treecell label="Vehículo"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+											</treechildren>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3PersonalTree">
+												<treecell label="Opciones de Personal"/>
+											</treerow>
+											<treechildren>
+												<treeitem>
+													<treerow id="nivel4PersonalTree">
+														<treecell label="Personal"/>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="INCLUIR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="CONSULTAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="EDITAR"/>
+														</treecell>
+														<treecell style="text-align: center; background: #d9534f;">
+															<checkbox tooltiptext="ELIMINAR"/>
+														</treecell>
+													</treerow>
+												</treeitem>
+											</treechildren>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2PromocionOfertaTree">
+										<treecell label="Promoción y Oferta"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3TarifaTree">
+												<treecell label="Tarifa"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3DescuentoTree">
+												<treecell label="Descuento"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3PromocionTree">
+												<treecell label="Tipo de Promociones"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2AgendaCitasTree">
+										<treecell label="Agenda y Citas"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3HabilidadTree">
+												<treecell label="Espacios del Taller"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3EspacioTree">
+												<treecell label="Espacios del Taller"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3TipoEventualidadTree">
+												<treecell label="Tipo de Eventualidad"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2ServicioTree">
+										<treecell label="Servicios"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3HerramientaTree">
+												<treecell label="Herramienta"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3TecnologiaTree">
+												<treecell label="Tipo de Eventualidad"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3TipoServicioTree">
+												<treecell label="Tipo de Servicio"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3AnomaliaTree">
+												<treecell label="Anomalia"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3FallaTree">
+												<treecell label="Falla"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2PostServiciosTree">
+										<treecell label="Post-Servicios"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3TipoGarantiaTree">
+												<treecell label="Tipo de Garantía"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3TipoReclamoTree">
+												<treecell label="Tipo de Reclamo"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+							</treechildren>
+						</treeitem>
+						<treeitem>
+							<treerow id="nivel1PromocionOfertaTree">
+								<treecell label="Promoción y Ofertas"/>
+							</treerow>
+							<treechildren>
+								<treeitem>
+									<treerow id="nivel2CatalogoServiciosTree">
+										<treecell label="Catálogo de Servicios"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3ConfigurarCatalogoServiciosTree">
+												<treecell label="Configurar"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3ActualizarCatalogoServiciosTree">
+												<treecell label="Actualizar"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+
+								<treeitem>
+									<treerow id="nivel2PromocionTree">
+										<treecell label="Promoción"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3ConfigurarPromocionTree">
+												<treecell label="Configurar"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3ActualizarPromocionTree">
+												<treecell label="Actualizar"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+							</treechildren>
+						</treeitem>
+						<treeitem>
+							<treerow id="nivel1AgendaTree">
+								<treecell label="Agenda"/>
+							</treerow>
+							<treechildren>
+								<treeitem>
+									<treerow id="nivel2PlanificacionTree">
+										<treecell label="Planificación"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3AsignarEspacioTree">
+												<treecell label="Asignar Espacio"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+							</treechildren>
+						</treeitem>
+						<treeitem>
+							<treerow id="nivel1CitasTree">
+								<treecell label="Citas"/>
+							</treerow>
+							<treechildren>
+								<treeitem>
+									<treerow id="nivel2AtenderCitaTree">
+										<treecell label="Atender Citas"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2CancelarCitaTree">
+										<treecell label="Cancelar Citas"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2AsignarEspacioCitaTree">
+										<treecell label="Asignar Espacio a Citas"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+							</treechildren>
+						</treeitem>
+						<treeitem>
+							<treerow id="nivel1ServiciosTree">
+								<treecell label="Servicios"/>
+							</treerow>
+							<treechildren>
+								<treeitem>
+									<treerow id="nivel2RecibirVehiculoTree">
+										<treecell label="Recibir Vehículo"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2DiagnosticarTree">
+										<treecell label="Diagnósticar"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2AprobarPresupuestoTree">
+										<treecell label="Aprobar Presupuesto"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2GenerarOrdenServicioTree">
+										<treecell label="Generar Orden de Servicio"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2RevisarServicioTree">
+										<treecell label="Revisar Servicio Ejecutado"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2GenerarOrdenEntregaTree">
+										<treecell label="Generar Orden de Entrega"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+							</treechildren>
+						</treeitem>
+						<treeitem>
+							<treerow id="nivel1PostServiciosTree">
+								<treecell label="Post-Servicios"/>
+							</treerow>
+							<treechildren>
+								<treeitem>
+									<treerow id="nivel2SolicitudReclamoTree">
+										<treecell label="Solicitar Reclamo"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2VerificarGarantiaTree">
+										<treecell label="Verificar Garantía"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+							</treechildren>
+						</treeitem>
+						<treeitem>
+							<treerow id="nivel1ReportesTree">
+								<treecell label="Reportes"/>
+							</treerow>
+							<treechildren>
+								<treeitem>
+									<treerow id="nivel2ReportesEstadisticoTree">
+										<treecell label="Reportes Estadístico"/>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="INCLUIR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="CONSULTAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="EDITAR"/>
+										</treecell>
+										<treecell style="text-align: center; background: #d9534f;">
+											<checkbox tooltiptext="ELIMINAR"/>
+										</treecell>
+									</treerow>
+								</treeitem>
+							</treechildren>
+						</treeitem>
+						<treeitem>
+							<treerow id="nivel1AdministracionSistemaTree">
+								<treecell label="Administración del Sistema"/>
+							</treerow>
+							<treechildren>
+								<treeitem>
+									<treerow id="nivel2SeguridadFuncionalTree">
+										<treecell label="Seguridad Funcional"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3GrupoTree">
+												<treecell label="Grupo"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3FuncionTree">
+												<treecell label="Función"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3AccionTree">
+												<treecell label="Acción"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3AsignacionGruposTree">
+												<treecell label="Asignación Grupos"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3UsuarioTree">
+												<treecell label="Usuario"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3PerfilUsuarioTree">
+												<treecell label="Perfil de Usuario"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2WebTree">
+										<treecell label="Configuración del portal WEB"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3ActualizarContenidoWebTree">
+												<treecell label="Actualizar Contenido"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2MovilTree">
+										<treecell label="Configuración App Movil"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3ActualizarContenidoMovilTree">
+												<treecell label="Actualizar Contenido"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2DifusionTree">
+										<treecell label="Configuración de Difusión"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3CorreoElectronicoTree">
+												<treecell label="Correo Electrónico"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3RedesSocialesTree">
+												<treecell label="Redes Sociales"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+								<treeitem>
+									<treerow id="nivel2BaseDatosTree">
+										<treecell label="Base de Datos"/>
+									</treerow>
+									<treechildren>
+										<treeitem>
+											<treerow id="nivel3RespaldoTree">
+												<treecell label="Respaldo"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3RecuperacionTree">
+												<treecell label="Recuperación"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+										<treeitem>
+											<treerow id="nivel3HistoricoTree">
+												<treecell label="Historico"/>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="INCLUIR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="CONSULTAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="EDITAR"/>
+												</treecell>
+												<treecell style="text-align: center; background: #d9534f;">
+													<checkbox tooltiptext="ELIMINAR"/>
+												</treecell>
+											</treerow>
+										</treeitem>
+									</treechildren>
+								</treeitem>
+							</treechildren>
+						</treeitem>
+					</treechildren>
+				</tree>
+			</groupbox>
+		</div>
+		<space />
+		<div id="divMenuItem" align="center" height="50px">
+			<hlayout style="padding: 20px">
+				<button sclass="btn-primary btn-mini" zclass="btn"
+					label="Aceptar" id="btnAceptar"/>
+				<button sclass="btn-success btn-mini" zclass="btn"
+					label="Volver" id="btnVolver"/>
+				<button sclass="btn-danger btn-mini" zclass="btn"
+					label="Cancelar" id="btnCancelar"/>
+			</hlayout>
+		</div>
+		<div>
+			<space />
+		</div>
+		<div>
+			<space />
+		</div>
+		<div>
+			<space />
+		</div>
+		<div>
+			<space />
+		</div>
+	</div>
+</div>

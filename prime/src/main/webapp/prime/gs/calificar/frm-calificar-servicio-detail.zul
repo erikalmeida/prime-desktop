@@ -1,0 +1,343 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gs.servicio.ControladorCalificar">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-date">
+			Servicios
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Calificar Servicio</a>
+		<a href="#">(Detalle)</a>
+	</div>
+	<space/>
+	
+		<div>
+			<div id="divDatosPrincipales" style="margin-center: 30%;" visible="true" align="center" >
+				<groupbox mold="3d" style="max-width: 950px;">
+					<caption label="Informacion" />
+					<grid style="border:none;">
+						<columns>
+							<column width="20%" />
+							<column width="30%" />
+							<column width="20%" />
+							<column width="30%" />
+						</columns>
+						<rows>
+						<row style="background:#FFFFFF;border:none; vertical-align: top;" >
+								<div visible="true">
+									<label value="Fecha"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<datebox id="dtb_fecha_nac" height="20%" zclass="form-control"  format="dd/MM/yy"  />
+									<label id="ermsgFecha" style="color: red"/>
+								</vlayout>
+								
+								
+					        	
+					        
+								
+							</row>	
+							
+							
+							<row style="background:#FFFFFF;border:none; vertical-align: top;" >
+									
+								<vlayout>
+								<label value="Placa"  />
+									<textbox id="txtPlaca"  zclass="form-control" readonly="false" />
+									<label id="ermsgPlaca" style="color: red"/>
+								</vlayout>
+					        	<div visible="true">
+									<label value="Marca"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<textbox id="txtMarca"  zclass="form-control"  />
+									<label id="ermsgMarca" style="color: red"/>
+								</vlayout>
+							</row>
+							
+							
+							
+							<row style="background:#FFFFFF;border:none; vertical-align: top;" >
+								
+								<div visible="true">
+									<label value="Modelo"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<textbox id="txtModelo"  zclass="form-control"  />
+									<label id="ermsgModelo" style="color: red"/>
+								</vlayout>
+								
+								<div visible="true">
+									<label value="Servicio Ofertado"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								<vlayout>
+									<textbox id="txtServicio"  zclass="form-control"  />
+									<label id="ermsgServicio" style="color: red"/>
+								</vlayout>
+								
+							</row>
+							
+							
+							
+							<row style="background:#FFFFFF;border:none; vertical-align: top;" >
+								
+								<div visible="true">
+									<label value="Comentario"  />
+									<label value=" *"
+										style="color: red" />
+								</div>
+								
+								<vlayout>
+								<textbox id="txtComentario"
+									width="100%" height="50px" multiline="true" tabindex="6"
+									maxlength="255"
+									style="resize:vertical;max-height:100px; min-height:50px;" />
+								<label id="ermsgComentario"
+									style="color: red" />
+							</vlayout>
+								
+								
+								
+								
+							</row>		
+							
+							
+							
+					
+							
+						</rows>
+					</grid>
+				</groupbox>
+				
+				
+			</div>
+			<space />
+			<div id="divMenuItemServicios" align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Califica Nuestro Servicio" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					
+					<row>
+						<listbox checkmark="false" nonselectableTags="*"
+							oddRowSclass="none"
+							emptyMessage="No se han encontrado resultados para esta búsqueda">
+
+ 
+							<listitem>
+								<listcell style="text-align:left;">
+								<vlayout>
+									<checkbox id="servicioMalo" label="Malo" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+									<vlayout>
+									<checkbox id="servicioRegular" label="Regular" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox id="servicioBueno" label="Bueno" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox id="servicioMBueno" label="Muy Bueno" />
+									</vlayout>
+
+								</listcell>
+
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox id="servicioExcelente" label="Excelente" />
+									</vlayout>
+
+								</listcell>
+							</listitem>
+
+							
+
+						</listbox>
+					</row>
+
+				</rows>
+			</grid>
+			<div id="divMenuItemServicio" align="center" height="50px">	
+				<hlayout style="padding: 0px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Calificar" id="btnServicio"/>
+						</hlayout>
+						</div>
+			
+		</groupbox>
+	</div>
+	
+	<space />
+	
+	<div id="divMenuItemInstalaciones" align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Califica Nuestras Instalaciones" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					
+					<row>
+						<listbox checkmark="false" nonselectableTags="*"
+							oddRowSclass="none"
+							emptyMessage="No se han encontrado resultados para esta búsqueda">
+
+ 
+							<listitem>
+								<listcell style="text-align:left;">
+								<vlayout>
+									<checkbox id="instalacionMalo" label="Malo" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+									<vlayout>
+									<checkbox id="instalacionRegular" label="Regular" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox id="instalacionBueno" label="Bueno" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox id="instalacionMBueno" label="Muy Bueno" />
+									</vlayout>
+
+								</listcell>
+
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox id="instalacionExcelente" label="Excelente" />
+									</vlayout>
+
+								</listcell>
+							</listitem>
+
+							
+
+						</listbox>
+					</row>
+
+				</rows>
+			</grid>
+			<div id="divMenuItemInstalacion" align="center" height="50px">	
+				<hlayout style="padding: 0px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Calificar" id="btnInstalacion"/>
+						</hlayout>
+						</div>
+		
+		</groupbox>
+	</div>
+<space></space>
+	
+	<div id="divMenuItemAtenciones" align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Califica Nuestra Atencion al Cliente" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					
+					<row>
+						<listbox checkmark="false" nonselectableTags="*"
+							oddRowSclass="none"
+							emptyMessage="No se han encontrado resultados para esta búsqueda">
+
+ 
+							<listitem>
+								<listcell style="text-align:left;">
+								<vlayout>
+									<checkbox id="atencionMalo" label="Malo" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+									<vlayout>
+									<checkbox id="atencionRegular" label="Regular" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox id="atencionBueno" label="Bueno" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox id="atencionMBueno" label="Muy Bueno" />
+									</vlayout>
+
+								</listcell>
+
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox id="atencionExcelente" label="Excelente" />
+									</vlayout>
+
+								</listcell>
+							</listitem>
+
+							
+
+						</listbox>
+					</row>
+
+				</rows>
+			</grid>
+			<div id="divMenuItemAtencion" align="center" height="50px">	
+				<hlayout style="padding: 0px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Calificar" id="btnAtencion"/>
+						</hlayout>
+						</div>
+		</groupbox>
+		
+		
+		
+	</div>
+		
+			
+			
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+		</div>
+</div>

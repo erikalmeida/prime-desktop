@@ -1,0 +1,53 @@
+=====> Modelos 18-02-2017  <=======
+
+packege modelos;
+
+Accion				S/R
+Agenda				S/R
+Cita				S/R
+Clase				R
+Color				R
+Comentario			S/R
+Diagnostico			R
+Eventualidad		S/R
+Funcion				R
+FuncionAccion		S/R
+Garaje				S/R
+Grupo				R
+GrupoFuncion		R
+GrupoUsuario		R
+Habilidad			R
+Log					R
+Marca				S/R
+Modelo				S/R
+Noticia				R
+Perfil				S/R
+Persona				R
+Presupuesto			S/R
+Rectificacion		R
+Servicio			R
+Sesion				S/R
+Sistema				R
+TipoClase			R
+TipoMotor			R falta la lista de motor el modelo motor no esta en esta revision aun
+Uso					R
+Usuario				R
+UsuarioHabilidad	S/R
+Vehiculo			R
+
+En desarrollo los maestros (Maria de los Angeles)
+
+Incidencias
+===========
+
+-Marca y Modelo Tienen ANNO cada una.
+-Ciudad--> el consultar muestra un combo habilitado que no se llena y su descripcion habilitada.
+-Ciudad--> en el consultar se redirecciona a estado.
+-Modelo y Marca estan dañados. no incluye y no muestra el catalogo. arreglar relaciones.
+-Uso no esta integrada.
+-Tipo de Caja y Caja no esta integrado.
+-Aceite, cuando le doy editar no me precarga lo que ya habia incluido.
+-Tipo Promociones no esta integrado.
+-Descuento al editar uno existente y aceptar la edicion incluye uno nuevo a partir de ese.
+-Tareas no esta integrada y se elimino del modelo logico.
+-Funcion no edita, arreglar.

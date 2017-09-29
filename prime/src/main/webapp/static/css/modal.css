@@ -1,0 +1,46 @@
+/*Modal*/
+
+.z-window-modal.z-window-shadow, .z-window-highlighted.z-window-shadow {
+	-webkit-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0
+		rgba(0, 0, 0, 0.22);
+	box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0
+		rgba(0, 0, 0, 0.22);
+	border-radius: 2px;
+	border: none;
+}
+
+.z-window {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	-ms-border-radius: 2px;
+	border-radius: 2px;
+	padding: 7px;
+	background: white;
+}
+
+.z-window-icon {
+	border: 0px solid #cfcfcf;
+	background: transparent;
+}
+
+.z-window-icon:hover {
+	background: transparent;
+}
+
+.z-window-content {
+	border: 0px solid #cfcfcf;
+}
+
+.z-window-header {
+	margin-left: 20px;
+}
+
+.z-messagebox-information {
+	background-image: url(../ico/material/ic_info_outline_black_18dp.png);
+}
+
+.z-messagebox-icon {
+	width: 36px;
+	height: 36px;
+}

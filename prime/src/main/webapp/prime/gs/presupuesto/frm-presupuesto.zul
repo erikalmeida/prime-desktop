@@ -1,0 +1,204 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gs.servicio.ControladorPresupuesto">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Generar Presupuesto
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Presupuesto</a>
+	</div>
+	<space />
+	<div align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Servicios" />
+			<div align="center">
+				<div align="center" style="max-width: 950px;">
+					<listbox id="listServicios" checkmark="true"
+						nonselectableTags="*" oddRowSclass="none"
+						emptyMessage="No se han encontrado resultados para esta búsqueda">
+						<listhead>
+
+							<listheader align="left" label="Titulo"
+								width="30%">
+								<checkbox />
+							</listheader>
+							<listheader align="left" label="Descripción"
+								width="50%">
+								<checkbox />
+							</listheader>
+							<listheader align="left" label="Estatus"
+								width="20%">
+								<checkbox />
+							</listheader>
+						</listhead>
+						<template name="model">
+							<listitem>
+
+								<listcell style="text-align:left;">
+									<label
+										if="${each.estatus=='Inactivo'}" style="color: red"
+										value="${each.titulo}" />
+									<label
+										if="${each.estatus=='Activo'}" value="${each.titulo}" />
+								</listcell>
+								<listcell style="text-align:left;">
+									<label
+										if="${each.estatus=='Inactivo'}" style="color: red"
+										value="${each.descripcion}" />
+									<label
+										if="${each.estatus=='Activo'}" value="${each.descripcion}" />
+								</listcell>
+								<listcell style="text-align:left;">
+									<label
+										if="${each.estatus=='Inactivo'}" value="${each.estatus}"
+										style="color: red" />
+									<label
+										if="${each.estatus=='Activo'}" value="${each.estatus}"
+										style="color: black" />
+								</listcell>
+							</listitem>
+						</template>
+					</listbox>
+				</div>
+			</div>
+
+			<space />
+			<space />
+		</groupbox>
+	</div>
+	<space />
+
+	<div align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Fallas" />
+			<div align="center">
+				<div align="center" style="max-width: 950px;">
+					<listbox id="listFallas" checkmark="true"
+						nonselectableTags="*" oddRowSclass="none"
+						emptyMessage="No se han encontrado resultados para esta búsqueda">
+						<listhead>
+
+
+							<listheader align="left" label="Descripción"
+								width="50%">
+								<checkbox />
+							</listheader>
+							<listheader align="left" label="Estatus"
+								width="20%">
+								<checkbox />
+							</listheader>
+						</listhead>
+						<template name="model">
+							<listitem>
+
+
+								<listcell style="text-align:left;">
+									<label
+										if="${each.estatus=='Inactivo'}" style="color: red"
+										value="${each.descripcion}" />
+									<label
+										if="${each.estatus=='Activo'}" value="${each.descripcion}" />
+								</listcell>
+								<listcell style="text-align:left;">
+									<label
+										if="${each.estatus=='Inactivo'}" value="${each.estatus}"
+										style="color: red" />
+									<label
+										if="${each.estatus=='Activo'}" value="${each.estatus}"
+										style="color: black" />
+								</listcell>
+							</listitem>
+						</template>
+					</listbox>
+				</div>
+			</div>
+
+			<space />
+			<space />
+		</groupbox>
+	</div>
+	<space></space>
+	<div align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Repuestos" />
+			<div align="center">
+				<div align="center" style="max-width: 950px;">
+					<listbox id="listTipoRepuestos" checkmark="true"
+						nonselectableTags="*" oddRowSclass="none"
+						emptyMessage="No se han encontrado resultados para esta búsqueda">
+						<listhead>
+
+							
+							<listheader align="left" label="Descripción"
+								width="50%">
+								<checkbox />
+							</listheader>
+							<listheader align="left" label="Estatus"
+								width="20%">
+								<checkbox />
+							</listheader>
+						</listhead>
+						<template name="model">
+							<listitem>
+
+								
+								<listcell style="text-align:left;">
+									<label
+										if="${each.estatus=='Inactivo'}" style="color: red"
+										value="${each.descripcion}" />
+									<label
+										if="${each.estatus=='Activo'}" value="${each.descripcion}" />
+								</listcell>
+								<listcell style="text-align:left;">
+									<label
+										if="${each.estatus=='Inactivo'}" value="${each.estatus}"
+										style="color: red" />
+									<label
+										if="${each.estatus=='Activo'}" value="${each.estatus}"
+										style="color: black" />
+								</listcell>
+							</listitem>
+							
+							
+						</template>
+					
+					</listbox>
+					
+				</div>
+			</div>
+
+			<space />
+			<space />
+		</groupbox>
+	</div>
+	<div id="divDatosPrincipales" visible="true" align="center" >
+				<groupbox mold="3d" style="max-width: 950px;">
+					<caption label="Monto Total" />
+					<grid style="border:none;">
+						<columns>
+							<column width="20%" />
+							
+						</columns>
+						<rows>
+						<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Monto:
+								</label>
+								<label id="montoTotal" ></label>
+
+
+							</row>
+							</rows>
+							</grid>
+							</groupbox>
+							</div>
+							
+	<space></space>
+	
+	
+			
+				
+
+</div>

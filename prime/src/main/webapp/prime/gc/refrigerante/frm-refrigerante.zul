@@ -1,0 +1,89 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gc.maestrico.ControladorRefrigerante">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-home">
+			Gestion de Refrigerante
+			<custom-attributes title="Go to Home" />
+		</a>
+		<a href="#">Formulario de Refrigerante</a>
+	</div>
+	<vlayout xmlns:n="native" style="padding: 20px">
+		<panel border="normal">
+			<caption>
+				<div style="margin-left: 35px;">
+					Registro de información de Refrigerantes
+				</div>
+			</caption>
+			<panelchildren>
+				<div class="row-fluid">
+					<grid>
+						<columns>
+							<column width="10%" />
+							<column width="30%" />
+							<column width="60%" />
+						</columns>
+						<rows>
+						
+						<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Tipo de Refrigerante:
+								</label>
+								 <combobox id="cmbTipoRefrigerante" value="Seleccione" width="200px">
+                    <template name="model">
+                        <comboitem label="${each.descripcion}"/>
+                    </template>
+                </combobox>
+							</row>
+							<row zclass="form-group">
+								<cell></cell>
+								<label style="padding-left: 20px;">
+									Descripcion:
+								</label>
+								<textbox id="txtDescripcion"
+									zclass="form-control" width="300px" />
+							</row>
+				   
+
+						</rows>
+					</grid>
+					<grid>
+						<columns>
+							<column width="30%" />
+							<column width="10%" />
+							<column width="10%" />
+							<column width="10%" />
+							<column width="40%" />
+						</columns>
+						<rows>
+							<row zclass="form-group" class="text-center">
+								<cell></cell>
+								<button id="btnRegistrar" type="button"
+									width="" class="btn btn-primary">
+									Registrar
+								</button>
+								<button id="btnVolver" type="button"
+									width="" class="btn btn-success">
+									Volver
+								</button>
+								<button id="btnCancelar" type="button"
+									width="" class="btn btn-danger">
+									Cancelar
+								</button>
+								<cell></cell>
+							</row>
+						</rows>
+					</grid>
+				</div>
+			</panelchildren>
+		</panel>
+	</vlayout>
+	<space></space>
+	
+	<script src="/static/js/excanvas.min.js" type="" if="${zk.ie lt 9}" ></script>	
+<script src="/static/js/jquery.flot.min.js"></script>
+<script src="/static/js/jquery.peity.min.js"></script>
+	
+</div>
+

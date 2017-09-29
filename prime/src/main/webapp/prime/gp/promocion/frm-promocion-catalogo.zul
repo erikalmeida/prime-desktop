@@ -1,0 +1,126 @@
+<div xmlns:zk="zk" xmlns:z="zul"
+	apply="ucla.si.controlador.gp.promocion.ControladorPromocionCatalogo">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#" id="breadcrumbPromocion">Promociones</a>
+	</div>
+	<space />
+	<div align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Promociones" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row
+						style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<textbox id="txtBuscar"
+								placeholder="Introduzca su búsqueda" width="60%" maxlength="50" />
+							<combobutton label="Acciones">
+								<menupopup>
+									<menuitem iconSclass="z-icon-search"
+										id="mItemBuscar" label="Buscar" sclass="mItem" />
+									<menuitem
+										iconSclass="z-icon-pencil-square-o" id="mItemIncluir"
+										label="Incluir" sclass="mItem" visible="true" />
+									<menuitem
+										iconSclass="z-icon-pencil-square-o" id="mItemAsignacion"
+										label="Asignación" sclass="mItem" visible="true" />
+								</menupopup>
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+			<space />
+		</groupbox>
+	</div>
+	<space />
+	<div align="center">
+		<div align="center" style="max-width: 950px;">
+			<listbox id="listPromocions" checkmark="true"
+				nonselectableTags="*" oddRowSclass="none"
+				emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="20%"></listheader>
+					<listheader align="left" label="Titulo"
+						width="45%">
+					</listheader>
+					<listheader align="left" label="Descripción"
+						width="50%">
+					</listheader>
+					<listheader align="left" label="Estatus"
+						width="10%">
+					</listheader>
+					<listheader align="left" label="Vigencia Inicio"
+						width="20%">
+					</listheader>
+					<listheader align="left" label="Vigencia Fin"
+						width="20%">
+					</listheader>
+					<listheader align="left" label="Imagen"
+						width="20%" height="15">
+					</listheader>
+				</listhead>
+				<template name="model">
+
+
+					<listitem>
+						<listcell style="text-align:left;">
+							<button
+								class="btn btn-primary btn-xs consultar"
+								iconSclass="z-icon-clipboard" tooltiptext="Consultar" />
+							<button
+								class="btn btn-primary btn-xs eliminar"
+								iconSclass="z-icon-sign-out" tooltiptext="Eliminar" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								style="color: red" value="${each.titulo}" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.titulo}" />
+						</listcell>
+
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								style="color: red" value="${each.titulo}" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.descripcion}" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								style="color: red" value="${each.titulo}" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.estatus}" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								style="color: red" value="${each.fechaVigenciaInicio}" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.fechaVigenciaInicio}" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<label if="${each.estatus=='Inactivo'}"
+								style="color: red" value="${each.fechaVigenciaFin}" />
+							<label if="${each.estatus=='Activo'}"
+								value="${each.fechaVigenciaFin}" />
+						</listcell>
+						<listcell style="text-align:left;">
+							<image src="${each.imagen}"
+								 />
+							
+						</listcell>
+
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+</div>

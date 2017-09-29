@@ -1,0 +1,134 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gs.servicio.ControladorServicioEditar">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Servicio</a>
+		<a href="#">Editar</a>
+	</div>
+	<space/>
+		<div>
+			<div id="divDatosPrincipales" visible="true" align="center">
+			<groupbox mold="3d" style="max-width: 950px;">
+				<caption label="Servicio" />
+				<grid style="border:none;">
+					<columns>
+						<column width="20%" />
+						<column width="30%" />
+						<column width="20%" />
+						<column width="30%" />
+					</columns>
+					<rows>
+						<row style="background:#FFFFFF;border:none;">
+							<div visible="true">
+								<label value="Titulo" />
+								<label value=" *" style="color: red" />
+							</div>
+							<vlayout>
+								<textbox id="txtTitulo" width="80%"
+									tabindex="3" maxlength="30" />
+								<label style="color: red" />
+							</vlayout>
+						</row>
+						<row
+							style="background:#FFFFFF;border:none; vertical-align: top;"
+							spans="1,3">
+							<div visible="true">
+								<label value="Descripción" />
+								<label value=" *" style="color: red" />
+							</div>
+							<vlayout>
+								<textbox id="txtDescripcion"
+									width="92.7%" height="50px" multiline="true" tabindex="6"
+									maxlength="255"
+									style="resize:vertical;max-height:100px; min-height:50px;" />
+								<label id="ermsgDescripcion"
+									style="color: red" />
+							</vlayout>
+						</row>
+						<row style="background:#FFFFFF;border:none;">
+							<div visible="true">
+								<label value="Tarifa" />
+								<label value=" *" style="color: red" />
+							</div>
+							<vlayout>
+								<doublebox id="dbTarifa" width="80%"
+									tabindex="3" maxlength="30" />
+								<label style="color: red" />
+							</vlayout>
+						</row>
+						<row>
+							<div visible="true">
+								<label value="Estado" />
+								<label value=" *" style="color: red" />
+							</div>
+							<vlayout>
+								<combobox id="cmb_estado" zclass=""
+									readonly="true" placeholder="Seleccione" height="40px"
+									width="80%">
+									<comboitem label="Vigente"
+										value="Vigente" />
+									<comboitem label="No Vigente"
+										value="No Vigente" />
+								</combobox>
+							</vlayout>
+						</row>
+						<row>
+							<div visible="true">
+								<label value="Imagen" />
+								<label value=" *" style="color: red" />
+							</div>
+							<image id="pics"
+								src="/static/img/img_question.png" sclass="img-thumbnail"
+								height="75px;" width="150px" />
+						</row>
+
+
+						<row>
+							<cell></cell>
+							<button label="Examinar" upload="true"
+								class="btn-xs" id="btnSubirImagen"
+								style="width:150px !important;">
+								<attribute name="onUpload">
+													org.zkoss.util.media.Media media = event.getMedia();
+													if (media instanceof org.zkoss.image.Image) {
+														org.zkoss.image.Image img = (org.zkoss.image.Image) media;
+														pics.setHeight("75px");
+														pics.setWidth("150px");
+														pics.setContent(img);
+													} else {
+														Messagebox.show(media+" no es una imagen valida", "Error", Messagebox.OK, Messagebox.ERROR);
+														break; //not to show too many errors
+													}
+												</attribute>
+											</button>
+					                </row>
+					</rows>
+				</grid>
+			</groupbox>
+		</div>
+			<space />
+			<div id="divMenuItem" align="center" height="50px">	
+				<hlayout style="padding: 20px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Aceptar" id="btnAceptar"/>
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="Cancelar" id="btnCancelar"/>
+				</hlayout>	
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+			<div>
+				<space />
+			</div>
+		</div>
+</div>

@@ -1,0 +1,62 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-home">
+			Gestion de Servicios
+			<custom-attributes title="Go to Home" />
+		</a>
+		<a href="#">Formulario de Servicios</a>
+	</div>
+	<vlayout xmlns:n="native" style="padding: 20px">
+		<panel border="normal">
+			<caption>
+				Registro de información de Servicio
+
+			</caption>
+			<panelchildren>
+
+
+				<div class="row-fluid">
+					<div class="" style="">
+						<hlayout sclass="">
+							<label value="Codigo:" width="200px" />
+							<textbox value="" width="324px"
+								id="txt_codigo" />
+						</hlayout>
+						<hlayout sclass="">
+							<label value="Descripcion:" width="150px" />
+							<textbox value="" width="300px"
+								id="txt_descripcion" />
+						</hlayout>
+						<hlayout sclass="">
+							<label value="Precio:" width="330px" />
+							<intbox constraint="no negative,no zero"
+								width="330px" id="int_precio">
+							</intbox>
+						</hlayout>
+						<hlayout sclass="">
+							<label value="Estatus:" width="324px" />
+							<combobox id="cmb_estatus" height="
+							25px" width="327px">
+								<comboitem label="Activo" />
+								<comboitem label="Inactivo" />
+							</combobox>
+						</hlayout>
+					</div>
+				</div>
+				<div>
+				<hlayout style="padding: 20px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Guardar" id="btnGuardar" />
+					<button sclass="btn-success btn-mini" zclass="btn"
+						label="Volver" />
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="Cancelar" />
+				</hlayout>
+				</div>
+			</panelchildren>
+		</panel>
+	</vlayout>
+
+</div>
+

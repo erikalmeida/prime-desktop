@@ -1,0 +1,230 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gac.cita.ControladorCancelarCitaDetalle">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-home">
+			Citas
+			<custom-attributes title="Go to Home" />
+		</a>
+		<a href="#">Detalle de Cita a Cancelar</a>
+	</div>
+
+
+
+	<style>
+		.nav_toolbar .z-toolbarbutton-content i { font-size: 20px;}
+		.nav_tabs .z-tabpanel { padding: 0; border-bottom: 0 none;}
+		.nav_tabs .z-tabpanels .z-toolbarbutton-content { padding: 4px;}
+		.nav_category { cursor:pointer; } .nav_text { color: #696569;
+		font-size : 24px; font-weight: bold;}
+	</style>
+
+
+	<zscript><![CDATA[
+	void updateCategory(String category) {
+		current_category.setValue(category);
+		current_subpage.setValue("Index");
+	}
+	void updateSubPage(String sub) {
+		current_subpage.setValue(sub);
+	}
+]]></zscript>
+
+
+	<vlayout xmlns:n="native" style="padding: 10px">
+
+	</vlayout>
+
+
+
+
+	<tabbox width="90%" sclass="nav_tabs">
+
+		<tabs>
+			<tab>Detalle</tab>
+			
+
+		</tabs>
+		<tabpanels>
+
+
+
+
+			<tabpanel>
+
+
+				<div sclass=""
+					style="margin: 0 auto; margin-top: 35px;width: 100%; height: 600px; border-radius: 10px 10px 10px 10px;">
+					<div sclass="content-header"
+						style="border-radius: 10px 10px 10px 10px;">
+
+						<vlayout xmlns:n="native"
+							style="padding: 20px">
+							<panel border="normal">
+								<caption>
+									<div style="margin-left: 30%;">
+										Detalle de Citas Pendientes
+									</div>
+								</caption>
+								<panelchildren>
+									<div class="row-fluid">
+										<grid>
+											<columns>
+												<column width="20%" />
+												<column width="20%" />
+												<column width="60%" />
+											</columns>
+											<rows>
+												<row
+													zclass="form-group">
+													<cell></cell>
+													<label
+														style="padding-left: 20px;">
+														Fecha de la Solicitud:
+													</label>
+													<datebox
+														id="txtFecha"  readonly="true" format="dd/MM/yyyy" zclass="form-control" 
+														width="" tabindex="1" />
+												</row>
+												<row
+													zclass="form-group">
+													<cell></cell>
+													<label
+														style="padding-left: 20px;">
+														Nombre del Cliente:
+													</label>
+													<textbox
+														id="txtNombres" zclass="form-control" readonly="true"
+														width="" />
+												</row>
+												
+												<row
+													zclass="form-group">
+													<cell></cell>
+													<label
+														style="padding-left: 20px;">
+														Placa del Vehiculo:
+													</label>
+													<textbox
+														id="txtPlaca" zclass="form-control" readonly="true"  width="" />
+												</row>
+												
+												<row
+													zclass="form-group">
+													<cell></cell>
+													<label
+														style="padding-left: 20px;">
+														Marca del Vehiculo:
+													</label>
+													<textbox
+														id="txtMarca" zclass="form-control" readonly="true"  width="" />
+												</row>
+												<row
+													zclass="form-group">
+													<cell></cell>
+													<label
+														style="padding-left: 20px;">
+														Modelo del Vehiculo:
+													</label>
+													<textbox
+														id="txtModelo" zclass="form-control" readonly="true"  width="" />
+												</row>
+												
+												<row
+													zclass="form-group">
+													<cell></cell>
+													<label
+														style="padding-left: 20px;">
+														Motivo:
+													</label>
+													<textbox
+														id="txtServicio" zclass="form-control" readonly="true"  width="" />
+												</row>
+												
+												<row
+													zclass="form-group">
+													<cell></cell>
+													<label
+														style="padding-left: 20px;">
+														Persona que lo Refirio:
+													</label>
+													<textbox
+														id="txtReferido" zclass="form-control" readonly="true"  width="" />
+												</row>
+												<row
+													zclass="form-group">
+													<cell></cell>
+													<label
+														style="padding-left: 20px;">
+														Eventualidad:
+													</label>
+													<textbox
+														id="txtEventualidad" zclass="form-control" maxlength="300" rows="50"  height="100px" width="210px" />
+												</row>
+												
+												
+												
+												 
+												
+					                
+					            </rows>
+					        </grid>
+						</div>
+					</panelchildren>
+				</panel>
+			</vlayout>
+			
+			
+			
+			
+		
+	       
+	        <div class="row-fluid">
+				<grid>
+		            <columns>
+		            	<column width="20%"/>
+		                <column width="20%"/>
+		                <column width="20%" />
+		                <column width="20%" />
+		                <column width="20%"/>
+		            </columns>
+		            <rows>
+		                <row zclass="form-group" align="center">
+		                	<cell></cell>                
+		                	<button sclass="btn-primary btn" 
+								label="Cancelar" id="btnCancelar"/>
+						 <button sclass="btn-danger btn" 
+								label="Volver" id="btnVolver"/> 
+						<!-- 	<button sclass="btn-danger btn" 
+								label="Cancelar" id="btn_cancelar"/> -->
+							<cell></cell>  
+		                </row>
+		            </rows>
+		       	</grid>
+			</div>
+	        <space></space>
+		</div>
+		
+        <space></space>
+	</div>
+	<script src="/static/js/excanvas.min.js" type="" if="${zk.ie lt 9}" ></script>	
+<script src="/static/js/jquery.flot.min.js"></script>
+<script src="/static/js/jquery.peity.min.js"></script>
+	
+	</tabpanel>
+	
+	
+	
+	
+	
+	
+		
+	
+	</tabpanels>
+	
+	</tabbox>
+	
+	
+	
+	
+</div>
+

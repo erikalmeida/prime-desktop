@@ -1,0 +1,297 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Servicios
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Diagnostico</a>
+	</div>
+	<space />
+
+
+	<div align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Diagnostico y Presupuesto"
+				style="font-size: 20px;font-weight: normal;" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+
+			</grid>
+
+		</groupbox>
+	</div>
+
+
+	<div id="divDatosPrincipales" visible="true" align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Datos personales" />
+			<div id="datospersonales" align="center" height="50px">
+				<hlayout style="padding: 20px">
+					<label value="Nombre y Apellido:" />
+					<label value="Rosa Pérez " />
+					<space></space>
+					<label value="Placa:" />
+					<label value="XGB-50F " />
+					<space></space>
+
+					<label value="Marca:" />
+					<label value="Toyota " />
+					<space></space>
+					<label value="Modelo:" />
+					<label value="Corolla " />
+				</hlayout>
+			</div>
+		</groupbox>
+	</div>
+
+
+
+
+
+
+
+
+	<div align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Falla" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row
+						style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<textbox id="txtBuscar"
+								placeholder="Introduzca su falla" width="60%" maxlength="50" />
+							<combobutton label="Acciones">
+								<menupopup>
+									<menuitem iconSclass="z-icon-search"
+										id="mItemBuscar" label="Buscar" sclass="mItem" />
+
+								</menupopup>
+							</combobutton>
+						</div>
+					</row>
+					<row>
+						<listbox checkmark="false" nonselectableTags="*"
+							oddRowSclass="none"
+							emptyMessage="No se han encontrado resultados para esta búsqueda">
+
+ 
+							<listitem>
+								<listcell style="text-align:left;">
+								<vlayout>
+									<checkbox label="Sistema Electrico" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+									<vlayout>
+									<checkbox label="Perdida de Velocidad" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox label="Defecto en Ruedas" />
+									</vlayout>
+
+								</listcell>
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox label="Transmisión" />
+									</vlayout>
+
+								</listcell>
+
+								<listcell style="text-align:left;">
+
+									<vlayout>
+									<checkbox label="Encendido" />
+									</vlayout>
+
+								</listcell>
+							</listitem>
+
+							
+
+						</listbox>
+					</row>
+
+				</rows>
+			</grid>
+			<space />
+			<space />
+		</groupbox>
+	</div>
+	<space />
+	<div align="center">
+		<div align="center" style="max-width: 950px;">
+			<listbox id="listFallas" checkmark="false"
+				nonselectableTags="*" oddRowSclass="none"
+				emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="14%"></listheader>
+					<listheader align="left" label="Codigo"
+						width="20%">
+					</listheader>
+					<listheader align="left" label="Descripción"
+						width="56%">
+					</listheader>
+
+				</listhead>
+				<!--  <template name="model">-->
+				<listitem>
+					<listcell style="text-align:left;">
+						<button class="btn btn-primary btn-xs editar"
+							iconSclass="z-icon-pencil" tooltiptext="Editar" />
+						<button class="btn btn-primary btn-xs consultar"
+							iconSclass="z-icon-clipboard" tooltiptext="Consultar" />
+						<button class="btn btn-primary btn-xs eliminar"
+							iconSclass="z-icon-sign-out" tooltiptext="Eliminar" />
+					</listcell>
+					<listcell style="text-align:left;">
+
+						<label value="00001" />
+					</listcell>
+					<listcell style="text-align:left;">
+
+						<label value="Falla bomba de gasolina" />
+					</listcell>
+
+				</listitem>
+				<!--</template>-->
+			</listbox>
+		</div>
+	</div>
+
+
+	<div align="center">
+		<groupbox mold="3d" style="max-width: 950px;">
+			<caption label="Servicio" />
+			<grid style="border:none;">
+				<columns>
+					<column width="100%" />
+				</columns>
+				<rows>
+					<row
+						style="background:#FFFFFF;border:none;padding-top:20px;">
+						<div align="center">
+							<textbox id="txtBuscar2"
+								placeholder="Introduzca el servicio que desea aplicar"
+								width="60%" maxlength="50" />
+							<combobutton label="Acciones">
+								<menupopup>
+									<menuitem iconSclass="z-icon-search"
+										id="mItemBuscar2" label="Buscar" sclass="mItem" />
+									<menuitem
+										iconSclass="z-icon-pencil-square-o" id="mItemIncluir2"
+										label="Incluir" sclass="mItem" visible="true" />
+								</menupopup>
+							</combobutton>
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<space />
+			<space />
+		</groupbox>
+	</div>
+
+
+	<div align="center">
+		<div align="center" style="max-width: 950px;">
+			<listbox id="listServicios" checkmark="false"
+				nonselectableTags="*" oddRowSclass="none"
+				emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="14%"></listheader>
+					<listheader align="left" label="Codigo"
+						width="20%">
+					</listheader>
+					<listheader align="left" label="Descripción"
+						width="56%">
+					</listheader>
+					<listheader align="left" label="Repuesto"
+						width="10%">
+					</listheader>
+					<listheader align="left" label="Monto"
+						width="10%">
+					</listheader>
+				</listhead>
+				<!--  <template name="model">-->
+				<listitem>
+					<listcell style="text-align:left;">
+						<button class="btn btn-primary btn-xs editar"
+							iconSclass="z-icon-pencil" tooltiptext="Editar1" />
+						<button class="btn btn-primary btn-xs consultar"
+							iconSclass="z-icon-clipboard" tooltiptext="Consultar1" />
+						<button class="btn btn-primary btn-xs eliminar"
+							iconSclass="z-icon-sign-out" tooltiptext="Eliminar1" />
+					</listcell>
+					<listcell style="text-align:left;">
+
+						<label value="00001" />
+					</listcell>
+					<listcell style="text-align:left;">
+
+						<label value="Falla bomba de gasolina" />
+					</listcell>
+					<listcell style="text-align:left;">
+
+						<label value="bomba de gasolina"
+							style="color: black" />
+					</listcell>
+
+					<listcell style="text-align:left;">
+
+						<label value="20000 BsF" />
+					</listcell>
+				</listitem>
+				<listitem>
+					<listcell style="text-align:left;">
+
+					</listcell>
+					<listcell style="text-align:left;">
+
+
+					</listcell>
+					<listcell style="text-align:left;">
+
+
+					</listcell>
+					<listcell style="text-align:left;">
+
+						<label value="Total:" style="color: black" />
+					</listcell>
+
+					<listcell style="text-align:left;">
+
+						<label value="20000 BsF" />
+					</listcell>
+				</listitem>
+				<!--</template>-->
+
+			</listbox>
+
+		</div>
+	</div>
+	<div id="divMenuItem" align="center" height="50px">
+		<hlayout style="padding: 20px">
+			<button sclass="btn-primary btn-mini" zclass="btn"
+				label="Generar Presupuesto" id="btnAceptar" />
+			<button sclass="btn-danger btn-mini" zclass="btn"
+				label="Cancelar" id="btnCancelar" />
+		</hlayout>
+	</div>
+
+
+
+
+</div>

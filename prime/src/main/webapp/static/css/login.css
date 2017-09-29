@@ -1,0 +1,123 @@
+
+/*Login*/
+.header h1 {
+	color: transparent;
+	padding-left: 70px;
+	left: 15px;
+	overflow: hidden;
+	position: relative;
+	top: 8px;
+	width: 203px;
+	background: url(../images/prime-title-white-64.png) no-repeat
+		transparent;
+	opacity: 1;
+	height: 67px;
+}
+
+.header h1 a {
+	color: transparent;
+	text-shadow: 0 0px transparent;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/0eC6fl06luXEYWpBSJvXCBJtnKITppOI_IvcXXDNrsc.woff2')
+		format('woff2');
+}
+
+body {
+	background-color: #EEEEEE;
+	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+.header {
+	-moz-box-shadow: 0 1px 0 #009688;
+	box-shadow: 0 1px 0 #009688;
+	background: #009688;
+	border-bottom: 1px solid #009688;
+}
+
+.content-header {
+	border: 0;
+	-webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0
+		rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0
+		rgba(0, 0, 0, 0.12);
+	background: white;
+	border-radius: 2px !important;
+	min-height: 80px;
+	width: 100%;
+	margin-top: -38px;
+	z-index: 20;
+	padding-top: 0px;
+}
+
+.content-header h1 {
+	padding-bottom: 5px;
+	padding-top: 5px;
+	margin-left: 0px;
+	margin-top: 0px;
+	background-color: #009688;
+	color: white;
+	text-shadow: 0 0px transparent;
+	margin-bottom: 0px;
+}
+
+.z-button, .btn-group>.btn {
+	background: #00BCD4;
+	border-color: #00BCD4;
+	color: white;
+	text-shadow: none;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px
+		rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	padding: 8px 30px;
+	width: auto !important;
+	height: auto !important;
+}
+
+.z-button:hover, .btn-group>.btn:hover, .z-button:active, .btn-group>.btn:active,
+	.z-button:focus, .btn-group>.btn:focus {
+	background: #00BCD4;
+	border-color: #00BCD4;
+	color: white;
+}
+
+.z-grid-header-border {
+	border-bottom: 1px solid transparent;
+	margin-top: -1px;
+	position: relative;
+}
+
+.z-grid {
+	border: 1px solid transparent;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.z-grid-odd>.z-row-inner, .z-grid-odd>.z-cell {
+	background: white;
+}
+
+.z-row:hover>.z-row-inner, .z-row:hover>.z-cell {
+	background: white;
+}
+
+html, body {
+	height: 90%;
+}
+
+a:hover, a:active, a:visited, a:focus {
+	text-decoration: none;
+	cursor: pointer;
+	color: #0088cc;
+}
+
+.panel-login {;
+	margin-left: 31%
+}
+
+@media ( max-width : 892px) {
+	.panel-login {
+		margin-left: 22% !important;
+	}
+}

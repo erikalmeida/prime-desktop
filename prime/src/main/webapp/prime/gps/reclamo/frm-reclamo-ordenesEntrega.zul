@@ -1,0 +1,42 @@
+<div xmlns:zk="zk" xmlns:z="zul" apply="ucla.si.controlador.gps.reclamo.ControladorReclamoOrdenesEntrega">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon icon-wrench">
+			Configuración
+			<custom-attributes title="Configuración" />
+		</a>
+		<a href="#">Ordenes de Entrega</a>
+	</div>
+	<space/>
+	<div align="center" >
+		<label style="font-size:24px;">Ordenes de Entrega</label>
+				
+		<div align="center" style="max-width: 950px;" >
+			<space/>
+			<space/>
+			<space/>
+			<listbox id="listOrdenes"  nonselectableTags="*" oddRowSclass="none" emptyMessage="No se han encontrado resultados para esta búsqueda">
+				<listhead>
+					<listheader align="left" width="30%"></listheader>
+					<listheader align="left" label="Fecha" width="38%"><checkbox/></listheader>
+					<listheader align="left" label="Orden de Entrega" width="38%"><checkbox/></listheader>
+				</listhead>
+				  <template name="model">
+					<listitem>
+						<listcell style="text-align:left;">
+ 							<button class="btn btn-primary btn-xs consultar" iconSclass="z-icon-clipboard" tooltiptext="Solicitar Reclamo" label="Solicitar Reclamo"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  value="${each.fechaCreacion}"/>
+						</listcell>
+						<listcell style="text-align:left;">
+							<label  value="${each.descripcion}"/>
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+	<space/>
+	
+</div>
